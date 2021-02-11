@@ -1,11 +1,60 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
+}
 
 a {
-  color: #00b7ff; }
+  color: #00b7ff; 
+}
+
+#logo {
+  font-size: 30px;
+  text-decoration: none;
+}
+
+#icons {
+  display: flex;
+}
+
+.icon {
+  padding: 0 2rem;
+}
+
+/* Section 1 */
+#section-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 600px;
+}
 
 h1 {
-  color: 15px; }
+  font-size: 50px; 
+}
+
+
+/* Section 2 */
+#section-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 600px;
+}
+
+/* Card */
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 30px;
+}
 
 /*# sourceMappingURL=style.css.map */
