@@ -1,14 +1,16 @@
 const router = require("express").Router();
 const bcrypt = require('bcryptjs');
 const UserModel = require('../models/User.model.js');
+let bodyParser = require('body-parser')
+
 
 /* GET home page */
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   res.render('index');
 });
 
 /* Sign Up page */
-router.get('/sign-up', (req, res, next) => {
+router.get('/sign-up', (req, res) => {
   res.render('sign-up.hbs')
 });
 
@@ -41,10 +43,10 @@ router.post('/sign-up', (req, res, next) => {
       password: hash
     })
     .then(() => {
-      res.redirect('/')
+      res.redirect('/profile');
     })
     .catch((err) => {
-      next(err)
+      next(err);
     })
 });
 
@@ -58,24 +60,27 @@ router.post('/login', (req, res, next) => {
     username,
     password
   } = req.body;
-  console.log(username);
-  console.log(req.body);
+
   UserModel.findOne({
       username: username
     })
-    .then((result) => {
-      console.log('result:', result);
+    .then(function (result) {
+      console.log(result);
       if (result) {
         bcrypt.compare(password, result.password)
           .then((isMatching) => {
             if (isMatching) {
-              req.session.loggedInUser = result
+              req.session.userData = result
+              req.session.work = false
               res.redirect('/profile')
             } else {
               res.render('login.hbs', {
-                msg: 'Passwords don\'t match'
+                msg: 'Password don\'t match'
               })
             }
+          })
+          .catch((err) => {
+            next(err)
           })
       } else {
         res.render('login.hbs', {
@@ -88,17 +93,40 @@ router.post('/login', (req, res, next) => {
     })
 });
 
+/* Middleware */
+
+const checkLoggedInUser = (req, res, next) => {
+  console.log(req.session.userData);
+  if (req.session.userData) {
+    next()
+  } else {
+    res.redirect('/login')
+  }
+}
+
 /* Profile page */
-router.get('/profile', (req, res, next) => {
-  res.render('profile.hbs')
+
+router.get(('/profile'), checkLoggedInUser, ((req, res) => {
+  let username = req.session.userData.username;
+  res.render('profile.hbs', {
+    username
+  })
+}));
+
+/* My list */
+router.get('/my-list', checkLoggedInUser, (req, res) => {
+  res.render('my-list.hbs');
 });
 
-router.get('/my-list', (req, res, next) => {
-  res.render('my-list.hbs')
+/* Groups */
+router.get('/groups', checkLoggedInUser, (req, res) => {
+  res.render('groups.hbs');
 });
 
-router.get('/groups', (req, res, next) => {
-  res.render('groups.hbs')
-});
+/* Log out */
+router.get('/logout', (req, res) => {
+  req.session.destroy();
+  res.redirect('/');
+})
 
 module.exports = router;
