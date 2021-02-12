@@ -17,12 +17,12 @@ const userSchema = new Schema({
   password: {
     type: String,
     require: true
-  }
+  },
   mylist: [String],
   groups: [String]
 });
 
-const User = model("User", userSchema);
+const UserModel = model("users", userSchema);
 
 const groupSchema = new Schema({
   name: {
@@ -41,6 +41,7 @@ const groupSchema = new Schema({
   }]
 });
 
-const Group = model('groups', groupSchema);
+const GroupModel = model('groups', groupSchema);
 
-module.exports = User;
+module.exports = UserModel;
+module.exports = GroupModel;

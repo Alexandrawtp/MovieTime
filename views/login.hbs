@@ -25,19 +25,26 @@
     </ul>
   </nav>
 
-<div class="card">
-  <h2>Log in</h2>
-<form>
-    <div class="form-group">
-      <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-        placeholder="Username">
+  <div class="content">
+    <div class="card">
+      <h2>Log in</h2>
+      <form action="/login" method="POST">
+        <div class="form-group">
+          <input name="username" type="username" class="form-control" aria-describedby="emailHelp"
+            placeholder="Username">
+        </div>
+        <div class="form-group">
+          <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Log in</button>
+      </form>
+
+      {{#if msg}}
+      <div class="error">{{msg}}</div>
+      {{/if}}
+
     </div>
-    <div class="form-group">
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <button type="submit" class="btn btn-primary">Log in</button>
-  </form>
-</div>
+  </div>
 </body>
 
 </html>
