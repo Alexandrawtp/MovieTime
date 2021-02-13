@@ -114,16 +114,36 @@ router.get(('/profile'), checkLoggedInUser, ((req, res) => {
 }));
 
 /* My list */
+
 router.get('/my-list', checkLoggedInUser, (req, res) => {
   res.render('my-list.hbs');
 });
 
 /* Groups */
+
 router.get('/groups', checkLoggedInUser, (req, res) => {
   res.render('groups.hbs');
 });
 
+/* Random pages */
+router.get('/random', checkLoggedInUser, (req, res) => {
+  res.render('random.hbs');
+});
+
+router.get('/romantic', checkLoggedInUser, (req, res) => {
+  res.render('romantic.hbs');
+});
+
+router.get('/action', checkLoggedInUser, (req, res) => {
+  res.render('action.hbs');
+});
+
+router.get('/comedy', checkLoggedInUser, (req, res) => {
+  res.render('comedy.hbs');
+});
+
 /* Log out */
+
 router.get('/logout', (req, res) => {
   req.session.destroy();
   res.redirect('/');
