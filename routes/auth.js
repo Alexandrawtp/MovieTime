@@ -140,18 +140,18 @@ function fourFilms(filmlist) {
 
 console.log(fourFilms(romanticFilms));
 
-router.get('/random', checkLoggedInUser, (req, res) => {
-    .then(result => {
-      for (e in movies) {
-        cli.get({
-          'name': movies[i]
-        })
-    }res.render('random.hbs', {
-      result
-    }))
-    .catch(err => console.log(err))
-  }
-});
+// router.get('/random', checkLoggedInUser, (req, res) => {
+//     .then(result => {
+//       for (e in movies) {
+//         cli.get({
+//           'name': movies[i]
+//         })
+//     }res.render('random.hbs', {
+//       result
+//     }))
+//     .catch(err => console.log(err))
+//   }
+// });
 
 /* Results */
 router.get('/results', checkLoggedInUser, (req, res) => {

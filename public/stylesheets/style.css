@@ -215,4 +215,11 @@ h2 {
   transform: translate3d(0,0,0);
 }
 
-/* Groups */
+.result-details {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding-left: 40px;
+}
+
+/* Resul */
