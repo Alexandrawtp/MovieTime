@@ -100,7 +100,7 @@ router.get('/my-list', (req, res, next) => {
   res.render('my-list.hbs')
 });
 
-router.get('/groups', (req, res, next) => {
+router.get('/groups2', (req, res, next) => {
   res.render('groups.hbs')
 });
 
