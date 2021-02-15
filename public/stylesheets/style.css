@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 30px 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -24,6 +24,7 @@ a {
 
 #icons {
   display: flex;
+  margin-right: 5px;
 }
 
 .icon {
@@ -83,4 +84,38 @@ h1 {
 
 .btn-primary {
   margin-top: 10px;
+}
+
+/* group pages */
+
+.container {
+  position: relative;
+  margin: 50px 0px;
+}
+
+.mainContain {
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.side1{
+  margin-right: 2rempx;
+}
+
+.side2{
+  margin-left: 7rem;
+  width: 500px;
+}
+
+.listMovies {
+  display: flex;
+  flex-direction: row;
+}
+
+.pictureMovie {
+  width: 200px;
+  height: 267px;
+  margin-right: 10px;
 }

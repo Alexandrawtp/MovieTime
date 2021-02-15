@@ -12,6 +12,11 @@ router.get('/sign-up', (req, res, next) => {
   res.render('sign-up.hbs')
 });
 
+router.get('/movie-details', (req, res, next) => {
+  res.render('movie-details.hbs')
+});
+
+
 router.post('/sign-up', (req, res, next) => {
   const {
     username,
