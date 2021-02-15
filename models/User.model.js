@@ -19,29 +19,10 @@ const userSchema = new Schema({
     require: true
   },
   mylist: [String],
-  groups: [String]
+  groups: [String],
+  isAdmin: Boolean
 });
 
 const UserModel = model("users", userSchema);
 
-const groupSchema = new Schema({
-  name: {
-    type: String,
-    unique: true
-  },
-  members: [String],
-  toprankedfilms: [{
-    title: Number //name of film: number of likes by group members
-  }],
-  news: [{
-    name: [{
-      likedAFilm: Boolean,
-      joinedThegroup: Boolean
-    }]
-  }]
-});
-
-const GroupModel = model('groups', groupSchema);
-
 module.exports = UserModel;
-module.exports = GroupModel;

@@ -25,10 +25,34 @@ const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowe
 app.locals.title = `${capitalized(projectName)}- Generated with IronGenerator`;
 
 // 👇 Start handling routes here
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const mongoose = require('mongoose');
+
+app.use(session({
+    secret: 'workplease',
+    saveUninitialized: false, 
+    resave: false, 
+    cookie: {
+      maxAge: 1000*60*60*24
+    },
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 60*60*24,
+    })
+}));
+
+const auth = require("./routes/auth");
+app.use("/", auth);
+
 const index = require("./routes/index");
 app.use("/", index);
 
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
+
+//My list
+
 
 module.exports = app;

@@ -1,6 +1,8 @@
 body {
   padding: 30px 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(31, 31, 31);
+  color: white;
 }
 
 @media screen and (min-width: 500px) {
@@ -14,12 +16,21 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: #ffffff;
+}
+
+a:hover {
+  color: rgb(216, 174, 178);
+}
+
+nav {
+  padding: 30px 20px 0 20px;
 }
 
 #logo {
   font-size: 20px;
   text-decoration: none;
+  color: white;
 }
 
 #icons {
@@ -33,24 +44,46 @@ a {
 
 /* Section 1 */
 
-#section-1 {
+.background {
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/cinema.jpeg);
+}
+
+.section-1 {
+  padding: 0 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 600px;
+  height: 700px;
+  color: white;
 }
 
 h1 {
+  text-align: center;
   font-size: 50px;
+}
+
+.question {
+  text-align: center;
+  font-size: 20px;
+}
+
+h2 {
+  color: white;
+  text-align: center;
 }
 
 /* Section 2 */
 
-#section-2 {
+.section-2 {
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 600px;
+  height: 700px;
+  top: 100px;
+  background: linear-gradient(0deg, rgba(40, 0, 0, 0.914) 0%, rgb(69, 3, 11) 100%);
 }
 
 /* Card */
@@ -64,6 +97,7 @@ h1 {
 
 .card {
   display: flex;
+  background-color: transparent;
   flex-direction: column;
   width: 400px;
   padding: 30px;
@@ -119,3 +153,108 @@ h1 {
   height: 267px;
   margin-right: 10px;
 }
+/* smileys */
+
+.smiley {
+  width: 50px;
+  margin: 10px;
+  box-shadow: 2px 2px 30px rgb(247, 183, 240);
+  border-radius: 50px;
+  border: solid 2px;
+}
+
+.smiley-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrap-smileys {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 40px 0;
+}
+
+.smiley-draw {
+  display: flex;
+  margin: 10px;
+  box-shadow: 2px 2px 30px rgb(247, 183, 240);
+  border: solid 4px;
+  border-radius: 200px;
+}
+
+/* Image hover */
+
+.add {
+  color: white;
+  font-size: 20px;
+}
+
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+  background: #4a4a4a;
+}
+
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding: 50px 20px;
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  max-width: none;
+  width: calc(100% + 20px);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(-10px,0,0);
+  transform: translate3d(-10px,0,0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.hovereffect:hover img {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 20px;
+  overflow: hidden;
+  padding: 1em 0;
+  background-color: transparent;
+}
+
+.hovereffect:hover h2:after {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.result-details {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding-left: 40px;
+}
+
+/* Resul */
