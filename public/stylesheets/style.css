@@ -1,6 +1,7 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgb(31, 31, 31);
+  color: white;
 }
 
 @media screen and (min-width: 500px) {
@@ -213,3 +214,5 @@ h2 {
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
+
+/* Groups */
