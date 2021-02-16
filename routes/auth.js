@@ -2,6 +2,7 @@ const router = require("express").Router();
 const bcrypt = require('bcryptjs');
 const UserModel = require('../models/User.model.js');
 const imdb = require('imdb-api');
+const axios = require('axios');
 const cli = new imdb.Client({
   apiKey: '6170a01b'
 });
@@ -126,32 +127,38 @@ router.get('/groups', checkLoggedInUser, (req, res) => {
   res.render('groups.hbs');
 });
 
-
-/* Random pages */
-let romanticFilms = ['The Photograph', 'Portrait of a Lady on Fire', 'A Star Is Born', 'If Beale Street Could Talk', 'If Beale Street Could Talk', 'Call Me By Your Name', 'Carol', 'Anna Karenina', 'The Vow', 'Lust, Caution', 'Brokeback Mountain', 'The Notebook', 'Eternal Sunshine of the Spotless Mind', 'Moulin Rouge', 'Monsoon Wedding', 'Y Tu Mamá También', 'Love and Basketball', 'Titanic', 'Pride and Prejudice', 'Before Sunrise', 'The Bodyguard', 'Like Water for Chocolate', 'Cinema Paradiso', 'Dirty Dancing', 'An Officer and a Gentleman', 'Mahogany', 'The Way We Were', 'Love Story', 'The Story of a Three-Day Pass', 'Doctor Zhivago', 'The Umbrellas of Cherbourg', 'Splendor in the Grass', 'An Affair to Remember', 'From Here to Eternity', 'Roman Holiday', 'Casablanca'];
-let movies = [];
-
-function fourFilms(filmlist) {
-  for(let i=0; i<4; i++) {
-    movies.push(filmlist[Math.floor(Math.random() * filmlist.length)])
-  }
-  return movies;
+let typeIDs = {
+  'comedy': 35,
+  'action': 28,
+  'romantic': 10749,
+  'sci-fi': 878,
+  'the-best': 1234,
 }
 
-console.log(fourFilms(romanticFilms));
+router.get('/random/:id', checkLoggedInUser, (req, res, next) => {
+  const type = req.params.id;
+  let api_key = process.env.API_KEY;
+  axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=${typeIDs[type]}`)
+    .then(result => {
+      movies = displayRandomFilms(result)
+      res.render('random.hbs', {
+        movies
+      });
+    })
+    .catch(err => console.log(err))
+});
 
-// router.get('/random', checkLoggedInUser, (req, res) => {
-//     .then(result => {
-//       for (e in movies) {
-//         cli.get({
-//           'name': movies[i]
-//         })
-//     }res.render('random.hbs', {
-//       result
-//     }))
-//     .catch(err => console.log(err))
-//   }
-// });
+function displayRandomFilms(result) {
+  let data = result.data.results
+  let randomMovies = [];
+  for (let i = 0; i < 4; i++) {
+    randomMovies.push(
+      data[Math.floor(Math.random() * data.length)]
+    )
+  }
+  return randomMovies;
+}
+
 
 /* Results */
 router.get('/results', checkLoggedInUser, (req, res) => {
@@ -180,3 +187,4 @@ router.get('/logout', (req, res) => {
 })
 
 module.exports = router;
+module.exports = checkLoggedInUser;

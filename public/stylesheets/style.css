@@ -1,5 +1,4 @@
 body {
-  padding: 30px 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgb(31, 31, 31);
   color: white;
@@ -135,7 +134,7 @@ h2 {
 }
 
 .side1{
-  margin-right: 2rempx;
+  margin-right: 2rem;
 }
 
 .side2{
@@ -257,4 +256,7 @@ h2 {
   padding-left: 40px;
 }
 
-/* Resul */
+/* fourmovies */
+.four-movies {
+  display: flex;
+}
