@@ -1,12 +1,7 @@
-const checkLoggedInUser = require('./middlewares')
-
 const router = require("express").Router();
 const bcrypt = require('bcryptjs');
 const UserModel = require('../models/User.model.js');
-const imdb = require('imdb-api');
-const cli = new imdb.Client({
-  apiKey: '6170a01b'
-});
+
 
 /* Sign Up page */
 router.get('/sign-up', (req, res) => {

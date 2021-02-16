@@ -4,7 +4,6 @@ const axios = require('axios');
 
 let api_key = process.env.API_KEY;
 
-
 let typeIDs = {
     'comedy': 35,
     'action': 28,

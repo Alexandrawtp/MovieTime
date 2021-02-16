@@ -1,7 +1,10 @@
 const checkLoggedInUser = require('./middlewares')
 const router = require("express").Router();
+const imdb = require('imdb-api');
 
-/* Results */
+const cli = new imdb.Client({
+    apiKey: '6170a01b'
+  });
 
 router.post('/results', checkLoggedInUser, (req, res) => {
     const {
