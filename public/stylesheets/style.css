@@ -1,5 +1,4 @@
 body {
-  padding: 30px 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgb(31, 31, 31);
   color: white;
@@ -45,9 +44,11 @@ nav {
 /* Section 1 */
 
 .background {
-  margin: 0;
-  padding: 0;
   background-image: url(../images/cinema.jpeg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .section-1 {
@@ -118,6 +119,35 @@ h2 {
 
 .btn-primary {
   margin-top: 10px;
+}
+
+/* groups Creation */
+
+.groupCreate {
+  height: 740px;
+}
+
+.mainContain1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 100px;
+}
+
+.search-group {
+  display: flex;
+  background-color: transparent;
+  flex-direction: column;
+  padding: 30px;
+  margin-top: 50px;
+}
+
+.background1 {
+  background-image: url(../images/ticket.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 /* group pages */

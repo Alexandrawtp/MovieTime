@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const bcrypt = require('bcryptjs');
 const UserModel = require('../models/User.model.js');
+const GroupModel = require('../models/Group.model.js')
 const imdb = require('imdb-api');
 const cli = new imdb.Client({
   apiKey: '6170a01b'
@@ -20,14 +21,15 @@ router.post('/sign-up', (req, res, next) => {
   } = req.body;
 
   if (!username.length || !email.length || !password.length) {
-    res.render('/sign-up', {
+    res.render('auth/sign-up', {
       msg: 'Please enter all fields'
     })
     return;
   }
+
   let re = /\S+@\S+\.\S+/;
   if (!re.test(email)) {
-    res.render('/sign-up', {
+    res.render('auth/sign-up', {
       msg: 'Email not in valid format'
     })
     return;
@@ -104,9 +106,9 @@ const checkLoggedInUser = (req, res, next) => {
 
 router.get(('/home'), checkLoggedInUser, ((req, res) => {
   let username = req.session.userData.username;
-  res.render('home.hbs', {
-    username
-  })
+  let groups = req.session.userData.groups_id
+  res.render('home.hbs', {username}, {groups})
+  console.log(UserModel)
 }));
 
 /* Profile */
@@ -123,9 +125,41 @@ router.get('/my-list', checkLoggedInUser, (req, res) => {
 /* Groups */
 
 router.get('/groups', checkLoggedInUser, (req, res) => {
-  res.render('groups.hbs');
+  res.render('groups1.hbs');
 });
 
+// create a group
+
+router.post('/groups', (req, res, next) => {
+  const {
+    groupname,
+  } = req.body;
+
+  if (!groupname.length) {
+    res.render('groups1', {
+      msg: 'Please enter all fields'
+    })
+    return;
+  }
+  GroupModel.create({
+      groupname,
+    })
+    .then(() => {
+      res.redirect('/groups');
+    })
+    .catch((err) => {
+      next(err);
+    })
+});
+
+// connect to the group
+
+function getUserWithGroup(username){
+  return User.findOne({ username: username })
+    .populate('groups').exec((err, groups) => {
+      console.log("Populated User " + groups);
+    })
+}
 
 /* Random pages */
 let romanticFilms = ['The Photograph', 'Portrait of a Lady on Fire', 'A Star Is Born', 'If Beale Street Could Talk', 'If Beale Street Could Talk', 'Call Me By Your Name', 'Carol', 'Anna Karenina', 'The Vow', 'Lust, Caution', 'Brokeback Mountain', 'The Notebook', 'Eternal Sunshine of the Spotless Mind', 'Moulin Rouge', 'Monsoon Wedding', 'Y Tu Mamá También', 'Love and Basketball', 'Titanic', 'Pride and Prejudice', 'Before Sunrise', 'The Bodyguard', 'Like Water for Chocolate', 'Cinema Paradiso', 'Dirty Dancing', 'An Officer and a Gentleman', 'Mahogany', 'The Way We Were', 'Love Story', 'The Story of a Three-Day Pass', 'Doctor Zhivago', 'The Umbrellas of Cherbourg', 'Splendor in the Grass', 'An Affair to Remember', 'From Here to Eternity', 'Roman Holiday', 'Casablanca'];
@@ -137,8 +171,6 @@ function fourFilms(filmlist) {
   }
   return movies;
 }
-
-console.log(fourFilms(romanticFilms));
 
 // router.get('/random', checkLoggedInUser, (req, res) => {
 //     .then(result => {

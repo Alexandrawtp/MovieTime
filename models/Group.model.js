@@ -4,11 +4,14 @@ const {
 } = require("mongoose");
 
 const groupSchema = new Schema({
-  name: {
+  groupname: {
     type: String,
     unique: true
   },
-  members: [String],
+  members: {
+    type: Schema.Types.ObjectId, 
+    ref: 'users'
+  },
   toprankedfilms: [{
     title: Number //name of film: number of likes by group members
   }],
