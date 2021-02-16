@@ -105,10 +105,11 @@ const checkLoggedInUser = (req, res, next) => {
 /* Home page (profile) */
 
 router.get(('/home'), checkLoggedInUser, ((req, res) => {
-  let username = req.session.userData.username;
-  let groups = req.session.userData.groups_id
-  res.render('home.hbs', {username}, {groups})
-  console.log(UserModel)
+  let userId = req.session.userData._id;
+  // acces database and get current user
+  //let groups = req.session.userData.groups_id
+  res.render('home.hbs')
+
 }));
 
 /* Profile */
@@ -130,7 +131,9 @@ router.get('/groups', checkLoggedInUser, (req, res) => {
 
 // create a group
 
-router.post('/groups', (req, res, next) => {
+router.post('/groups', checkLoggedInUser, (req, res, next) => {
+  const userId = req.session.userData._id
+
   const {
     groupname,
   } = req.body;
@@ -141,8 +144,19 @@ router.post('/groups', (req, res, next) => {
     })
     return;
   }
+
+  if (!userId.length) {
+    res.render('groups1', {
+      msg: 'retry to login'
+    })
+    return;
+  }
+
+
   GroupModel.create({
       groupname,
+      owner: userId,
+      isAdmin: true,
     })
     .then(() => {
       res.redirect('/groups');
@@ -150,16 +164,31 @@ router.post('/groups', (req, res, next) => {
     .catch((err) => {
       next(err);
     })
+    console.log(req.body)
+    
 });
 
-// connect to the group
+// find a group 
 
-function getUserWithGroup(username){
-  return User.findOne({ username: username })
-    .populate('groups').exec((err, groups) => {
-      console.log("Populated User " + groups);
+router.get('/groups', checkLoggedInUser, (req, res) => {
+  res.render('groups1.hbs')
+});
+
+router.post('/groups', checkLoggedInUser, (req, res) => {
+  const {
+    groupname,
+  } = req.body;
+
+  cli.get({
+      'name': movieName
     })
-}
+    .then(results => res.render('results.hbs', {
+      results
+    }))
+    .catch(err => console.log(err))
+});
+
+
 
 /* Random pages */
 let romanticFilms = ['The Photograph', 'Portrait of a Lady on Fire', 'A Star Is Born', 'If Beale Street Could Talk', 'If Beale Street Could Talk', 'Call Me By Your Name', 'Carol', 'Anna Karenina', 'The Vow', 'Lust, Caution', 'Brokeback Mountain', 'The Notebook', 'Eternal Sunshine of the Spotless Mind', 'Moulin Rouge', 'Monsoon Wedding', 'Y Tu Mamá También', 'Love and Basketball', 'Titanic', 'Pride and Prejudice', 'Before Sunrise', 'The Bodyguard', 'Like Water for Chocolate', 'Cinema Paradiso', 'Dirty Dancing', 'An Officer and a Gentleman', 'Mahogany', 'The Way We Were', 'Love Story', 'The Story of a Three-Day Pass', 'Doctor Zhivago', 'The Umbrellas of Cherbourg', 'Splendor in the Grass', 'An Affair to Remember', 'From Here to Eternity', 'Roman Holiday', 'Casablanca'];
