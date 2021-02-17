@@ -43,5 +43,4 @@ router.post('/my-list', checkLoggedInUser, (req, res) => {
     })
 });
 
-
 module.exports = router;
