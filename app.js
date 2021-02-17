@@ -11,7 +11,6 @@ const express = require("express");
 
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
-const hbs = require("hbs");
 
 const app = express();
 
@@ -45,14 +44,25 @@ app.use(session({
 const auth = require("./routes/auth");
 app.use("/", auth);
 
+const profile = require("./routes/profile");
+app.use("/", profile);
+
+const myList = require("./routes/list");
+app.use("/", myList);
+
+const groups = require("./routes/groups");
+app.use("/", groups);
+
+const random = require("./routes/random");
+app.use("/", random);
+
+const results = require("./routes/results");
+app.use("/", results);
+
 const index = require("./routes/index");
 app.use("/", index);
 
-
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
-
-//My list
-
 
 module.exports = app;
