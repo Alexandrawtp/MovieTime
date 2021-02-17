@@ -26,6 +26,12 @@
   </ul>
 </nav>
 
+{{#if msg}}
+<div class="add-to-list-msg">{{msg}}</div>
+{{/if}}
+
+<div>Added to your list !</div>
+
 <div class="randomMovies">
   {{#each movies}}
   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">

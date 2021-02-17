@@ -2,17 +2,6 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgb(31, 31, 31);
   color: white;
-  overflow: hidden; 
-}
-
-@media screen and (min-width: 500px) {
-  /*      Targets all devices greater than 500px
-       CSS for tablets */
-}
-
-@media screen and (min-width: 1000px) {
-  /*      Targets all devices greater than 1000px
-       CSS for Desktops */
 }
 
 a {
@@ -50,6 +39,7 @@ nav {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  height: 1700px;
 }
 
 .section-1 {
@@ -348,4 +338,8 @@ h2 {
 }
 
 /*list*/
+
+.add-to-list-msg {
+  color: white;
+}
 
