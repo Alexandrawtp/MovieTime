@@ -40,6 +40,7 @@ router.post('/sign-up', (req, res, next) => {
       res.redirect('/home');
     })
     .catch((err) => {
+      console.log(err)
       next(err);
     })
 });
