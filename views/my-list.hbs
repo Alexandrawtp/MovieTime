@@ -26,12 +26,17 @@
       </div>
     </ul>
   </nav>
-<<<<<<< HEAD
-  <h1>My list</h1>
-=======
 
-  My list
-</body>
-
-</html>
->>>>>>> 93075fd2825b5094058d524e4ca2344ecefb7be1
+  <div class="randomMovies">
+    {{#each movies}}
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <div class="hovereffect">
+        <img class="img-responsive card-img-top" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="poster">
+        <div class="overlay">
+          <h2>{{title}}</h2>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
