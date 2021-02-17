@@ -1,4 +1,4 @@
-<div class="background-ticket">
+<div class="background1">
   <nav>
     <ul class="nav justify-content-between">
       <div id="logo">MovieTime</div>
@@ -20,32 +20,25 @@
           <a class="nav-link" href="/profile">Profile</a>
         </li>
         <li class="nav-item">
-          <img src="images/logout.svg" alt="profile" class="icon">
+          <img src="images/logout.svg" alt="home" class="icon">
           <a class="nav-link" href="/logout">Log out</a>
         </li>
       </div>
     </ul>
   </nav>
 
-<<<<<<< HEAD
-</html>
-<<<<<<< HEAD
->>>>>>> 93075fd2825b5094058d524e4ca2344ecefb7be1
-=======
->>>>>>> alex-branch
->>>>>>> origin/benBranch
-=======
-  <div class="randomMovies">
-    {{#each movies}}
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-      <div class="hovereffect">
-        <img class="img-responsive card-img-top" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="poster">
-        <div class="overlay">
-          <h2>{{title}}</h2>
+  <div class="groupCreate">
+    <div class="mainContain1">
+      <div class="form-group">
+        <div class="content">
+          <h2>Available groups</h2>
+          <div>
+            {{#each groups}}
+          </div>
+          <h3>{{this.groupname}}</h3>
+          {{/each}}
         </div>
+     </div>
       </div>
-    </div>
-    {{/each}}
   </div>
 </div>
->>>>>>> benBranch

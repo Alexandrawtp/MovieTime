@@ -18,9 +18,11 @@ const userSchema = new Schema({
     type: String,
     require: true
   },
-  mylist: [String],
-  groups: [String],
-  isAdmin: Boolean
+
+  members: [{
+    type: Schema.Types.ObjectId,
+    ref: 'users'
+  }],
 });
 
 const UserModel = model("users", userSchema);

@@ -25,3 +25,20 @@
     </div>
   </ul>
 </nav>
+
+
+<h2>Update the Profile</h2>
+<hr>
+<div>
+  <form method='POST' action='/profil/{{drone._id}}/edit'>
+    <div>
+      <label>Username: </label>
+      <input name='username' type='text' value='{{users.username}}'>
+    </div>
+    <div>
+      <label>Mail: </label>
+      <input name='mail' type='text' value='{{users.mail}}'>
+    </div>
+    <button type='submit'>Submit</button>
+  </form>
+</div>
