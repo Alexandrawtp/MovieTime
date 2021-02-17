@@ -5,7 +5,7 @@ require('dotenv').config();
 // ℹ️ Connects to the database
 require("./db");
 
-//mongodb+srv://frenchteam:movietime2021@cluster0.4fg7h.mongodb.net/movies-project?retryWrites=true&w=majority
+
 
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
