@@ -1,35 +1,37 @@
-<nav>
-  <ul class="nav justify-content-between">
-    <div id="logo"><a href="/">MovieTime</a></div>
-    <div id="icons">
-      <li class="nav-item">
-        <img src="images/person.svg" alt="profile" class="icon">
-        <a class="nav-link" href="/login">Login</a>
-      </li>
-      <li class="nav-item">
-        <img src="images/door-open.svg" alt="profile" class="icon">
-        <a class="nav-link" href="/sign-up">Sign Up</a>
-      </li>
+<div class="background-ticket">
+  <nav>
+    <ul class="nav justify-content-between">
+      <div id="logo"><a href="/">MovieTime</a></div>
+      <div id="icons">
+        <li class="nav-item">
+          <img src="images/person.svg" alt="profile" class="icon">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <img src="images/door-open.svg" alt="profile" class="icon">
+          <a class="nav-link" href="/sign-up">Sign Up</a>
+        </li>
+      </div>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <div class="card">
+      <h2>Log in</h2>
+      <form action="/login" method="POST">
+        <div class="form-group">
+          <input name="username" type="name" class="form-control" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Log in</button>
+      </form>
+
+      {{#if msg}}
+      <div class="error">{{msg}}</div>
+      {{/if}}
+
     </div>
-  </ul>
-</nav>
-
-<div class="content">
-  <div class="card">
-    <h2>Log in</h2>
-    <form action="/login" method="POST">
-      <div class="form-group">
-        <input name="username" type="name" class="form-control" placeholder="Username">
-      </div>
-      <div class="form-group">
-        <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <button type="submit" class="btn btn-primary">Log in</button>
-    </form>
-
-    {{#if msg}}
-    <div class="error">{{msg}}</div>
-    {{/if}}
-
   </div>
 </div>
