@@ -183,6 +183,25 @@ h2 {
   height: 267px;
   margin-right: 10px;
 }
+
+/* search page */
+
+.background2 {
+  background-image: url(../images/pellicule.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.searchGroup {
+  height: 740px;
+}
+
+.groupsResult {
+  padding-top: 10rem;
+}
+
 /* smileys */
 
 .smiley {

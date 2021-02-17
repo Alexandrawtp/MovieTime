@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const bcrypt = require('bcryptjs');
 const UserModel = require('../models/User.model.js');
-const GroupModel = require('../models/Group.model.js')
+const GroupModel = require('../models/Group.model.js');
+const { MongooseDocument } = require("mongoose");
 const imdb = require('imdb-api');
 const cli = new imdb.Client({
   apiKey: '6170a01b'
@@ -106,8 +107,6 @@ const checkLoggedInUser = (req, res, next) => {
 
 router.get(('/home'), checkLoggedInUser, ((req, res) => {
   let userId = req.session.userData._id;
-  // acces database and get current user
-  //let groups = req.session.userData.groups_id
   res.render('home.hbs')
 
 }));
@@ -126,12 +125,24 @@ router.get('/my-list', checkLoggedInUser, (req, res) => {
 /* Groups */
 
 router.get('/groups', checkLoggedInUser, (req, res) => {
-  res.render('groups1.hbs');
+  res.render('groups/groups.hbs');
 });
+
+router.get('/groups/details', checkLoggedInUser, (req, res) => {
+  res.render('groups/details.hbs')
+})
+
+router.get('/groups/create', checkLoggedInUser, (req, res) => {
+  res.render('groups/create.hbs')
+})
+
+//router.get('/groups/list', checkLoggedInUser, (req, res) => {
+//  res.render('groups/list.hbs')
+//})
 
 // create a group
 
-router.post('/groups', checkLoggedInUser, (req, res, next) => {
+router.post('/groups/create', checkLoggedInUser, (req, res, next) => {
   const userId = req.session.userData._id
 
   const {
@@ -139,14 +150,14 @@ router.post('/groups', checkLoggedInUser, (req, res, next) => {
   } = req.body;
 
   if (!groupname.length) {
-    res.render('groups1', {
+    res.render('groups/create', {
       msg: 'Please enter all fields'
     })
     return;
   }
 
   if (!userId.length) {
-    res.render('groups1', {
+    res.render('groups/create', {
       msg: 'retry to login'
     })
     return;
@@ -159,34 +170,66 @@ router.post('/groups', checkLoggedInUser, (req, res, next) => {
       isAdmin: true,
     })
     .then(() => {
-      res.redirect('/groups');
+      res.redirect('groups/details');
     })
     .catch((err) => {
       next(err);
     })
-    console.log(req.body)
     
 });
 
+// list groups
+/*
+router.get("/groups/list", checkLoggedInUser, (req, res, next) => {
+  console.log('test1')
+  GroupModel.find()
+  .then((groups) => {
+    console.log(groups)
+    res.render("groups/list.hbs", { groups })
+  })
+  .catch((err) => {
+    console.log(err)
+    next(err);
+  })
+});
+*/
+
 // find a group 
 
-router.get('/groups', checkLoggedInUser, (req, res) => {
-  res.render('groups1.hbs')
+router.get('/groups/search', checkLoggedInUser, (req, res) => {
+  res.render('groups/search.hbs');
 });
 
-router.post('/groups', checkLoggedInUser, (req, res) => {
-  const {
-    groupname,
-  } = req.body;
 
-  cli.get({
-      'name': movieName
+router.post('/groups/search', checkLoggedInUser, (req, res, next) => {
+  const {groupname} = req.body
+
+  GroupModel.find(groupname)
+    .then((groups) => {
+      res.render("/groups/search.hbs", {groups})
+      console.log('test1')
     })
-    .then(results => res.render('results.hbs', {
-      results
-    }))
-    .catch(err => console.log(err))
+    .catch((error) => {
+      console.log('Error while getting the books from the DB: ', error);
+      next(error);
+    });
 });
+
+
+
+// Profile
+
+/*
+router.get("/profile/:id", checkLoggedInUser, (req, res, next) => {
+
+  const { id } = req.params // destructure to get params. Good practice.
+  // findById method will obtain the information of the drone to show in the update form view
+  UserModel.findById(id)
+  .then((users) => res.render("profile.hbs", { users }))
+  .catch((err) => console.log(err));
+  });
+*/
+
 
 
 
