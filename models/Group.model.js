@@ -4,31 +4,17 @@ const {
 } = require("mongoose");
 
 const groupSchema = new Schema({
-  groupname: {
+  name: {
     type: String,
-    unique: true
+    unique: true,
+    require
   },
-  owner: {
-    type: Schema.Types.ObjectId, 
-    ref: 'users',
-  },
+  description: String,
 
-  isAdmin: Boolean,
+  members: [{username: String, status: String}],
 
-  members: [{
-    type: Schema.Types.ObjectId,
-    ref: 'users'
-  }],
+  news: [{username: String, message: String}],
 
-  toprankedfilms: [{
-    title: Number //name of film: number of likes by group members
-  }],
-  news: [{
-    name: [{
-      likedAFilm: Boolean,
-      joinedThegroup: Boolean
-    }]
-  }]
 });
 
 const GroupModel = model('groups', groupSchema);
