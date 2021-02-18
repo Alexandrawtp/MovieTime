@@ -1,0 +1,26 @@
+{{> navbar }}
+
+{{#if msg}}
+    <div class="message success">
+        {{msg}}
+    </div>
+{{/if}}
+
+{{#if err}}
+    <div class="message error">
+        {{err}}
+    </div>
+{{/if}}
+
+{{> group_search }}
+
+<ul>
+{{#each groups}}
+    <li>
+        {{name}} - {{description}}
+        <form action="/group/{{name}}/join" method="POST">
+            <button type="submit" class="btn btn-primary">Join Group</button>
+        </form>
+    </li>
+{{/each}}
+</ul>

@@ -44,12 +44,7 @@ router.get('/profile/:id/edit', checkLoggedInUser, (req, res, next) => {
 router.post('/profile/:id/edit', checkLoggedInUser, (req, res, next) => {
   const {id} = req.params;
   const {userUsername, userEmail} = req.body;
-/*
-  let editedUser = {
-    username: userUsername,
-    email: userEmail,
-  }; 
-*/
+
   UserModel.findByIdAndUpdate(id, {$set: req.body})
     .then((user) => {
       console.log(id)

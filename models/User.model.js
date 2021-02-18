@@ -18,9 +18,9 @@ const userSchema = new Schema({
     type: String,
     require: true
   },
-  myList: [String],
+  mylist: [String],
   groups: [String],
-  isAdmin : Boolean,
+  isAdmin: Boolean,
   profilePic: {
     type: String,
   },
