@@ -1,10 +1,9 @@
 function addToList(id) {
-  $.post('/my-list', {
-    id
-  }, (data) => {
-    if (data['status'] === 'ok') {
-    } else {
-      alert("Error ...");
-    }
-  })
+    $.post('/my-list', {
+        id
+    }, (data) => {
+        if (data['status'] === 'ok') {} else {
+            alert("Error ...");
+        }
+    })
 }
