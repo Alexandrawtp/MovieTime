@@ -7,7 +7,6 @@ const UserModel = require('../models/User.model.js');
 router.get('/sign-up', (req, res) => {
     res.render('auth/sign-up.hbs')
 });
-
 router.post('/sign-up', (req, res, next) => {
     const {
         username,
