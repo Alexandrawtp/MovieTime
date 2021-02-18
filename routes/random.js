@@ -16,8 +16,8 @@ router.get('/random/:id', checkLoggedInUser, (req, res, next) => {
     const randomPage = Math.floor(Math.random() * 15);
     const url = (
         type in typeIDs ?
-            `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=${typeIDs[type]}&page=${randomPage}`
-            : `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&page=${randomPage}`
+        `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=${typeIDs[type]}&page=${randomPage}` :
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&page=${randomPage}`
     );
 
     axios.get(url)
@@ -33,7 +33,7 @@ router.get('/random/:id', checkLoggedInUser, (req, res, next) => {
 function displayRandomFilms(result) {
     return result.data.results.sort(
         () => 0.5 - Math.random()
-    ).slice(0,4);
+    ).slice(0, 4);
 }
 
 module.exports = router;
