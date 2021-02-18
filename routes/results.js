@@ -1,23 +1,30 @@
 const checkLoggedInUser = require('./middlewares')
 const router = require("express").Router();
-const imdb = require('imdb-api');
+const axios = require('axios');
 
-const cli = new imdb.Client({
-    apiKey : process.env.CLI_KEY
-  });
+let api_key = process.env.API_KEY;
 
 router.post('/results', checkLoggedInUser, (req, res) => {
     const {
         movieName
     } = req.body;
 
-    cli.get({
-        'name': movieName
-    })
-        .then(results => res.render('results.hbs', {
-            results
-        }))
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${movieName}`
+
+    axios.get(url)
+        .then(result => {
+            let movies = result.data.results;
+            res.render('results.hbs', {movies});
+        })
         .catch(err => console.log(err))
+
+    // cli.get({
+    //     'name': movieName
+    // })
+    //     .then(results => res.render('results.hbs', {
+    //         results
+    //     }))
+    //     .catch(err => console.log(err))
 });
 
 module.exports = router;

@@ -17,6 +17,9 @@ const favicon = require("serve-favicon");
 // https://www.npmjs.com/package/path
 const path = require("path");
 
+const hbs = require('hbs');
+hbs.registerPartials(__dirname + '/../views/partials', function (err) {});
+
 // Middleware configuration
 module.exports = (app) => {
   // In development environment the app logs
