@@ -1,31 +1,5 @@
 <div class="background">
-  <nav>
-    <ul class="nav justify-content-between">
-      <div id="logo">MovieTime</div>
-      <div id="icons">
-        <li class="nav-item">
-          <img src="images/house.svg" alt="home" class="icon">
-          <a class="nav-link active" href="/home">Home</a>
-        </li>
-        <li class="nav-item">
-          <img src="images/people.svg" alt="people" class="icon">
-          <a class="nav-link active" href="/groups">Groups</a>
-        </li>
-        <li class="nav-item">
-          <img src="images/heart.svg" alt="heart" class="icon">
-          <a class="nav-link" href="/my-list">My List</a>
-        </li>
-        <li class="nav-item">
-          <img src="images/person.svg" alt="profile" class="icon">
-          <a class="nav-link" href="/profile">Profile</a>
-        </li>
-        <li class="nav-item">
-          <img src="images/logout.svg" alt="home" class="icon">
-          <a class="nav-link" href="/logout">Log out</a>
-        </li>
-      </div>
-    </ul>
-  </nav>
+  {{> navbar }}
 
   <section class="section-1">
     <h1>Give me a movie !</h1>
@@ -57,13 +31,3 @@
   </section>
 
 </div>
-
-<section class="section-2">
-  <h2>Find a movie</h2>
-  <form action="/results" method="POST">
-  <div class="mb-3">
-    <input name="movieName" type="text" class="form-control" id="exampleInputEmail1" placeholder="Movie Name" aria-describedby="emailHelp">
-  </div>
-  <button type="submit" class="btn btn-primary">Search</button>
-</form>
-</section>

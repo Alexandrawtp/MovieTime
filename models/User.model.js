@@ -10,7 +10,7 @@ const userSchema = new Schema({
     unique: true,
     require: true
   },
-  mail: {
+  email: {
     type: String,
     require: true
   },
@@ -18,11 +18,12 @@ const userSchema = new Schema({
     type: String,
     require: true
   },
-
-  members: [{
-    type: Schema.Types.ObjectId,
-    ref: 'users'
-  }],
+  mylist: [String],
+  groups: [String],
+  isAdmin: Boolean,
+  profilePic: {
+    type: String,
+  },
 });
 
 const UserModel = model("users", userSchema);

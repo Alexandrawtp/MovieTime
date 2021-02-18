@@ -31,13 +31,16 @@ router.post('/sign-up', (req, res, next) => {
 
   let salt = bcrypt.genSaltSync(10);
   let hash = bcrypt.hashSync(password, salt);
-  UserModel.create({
-      username,
-      email,
-      password: hash
-    })
+  const user = {
+    username,
+    email,
+    password: hash
+  }
+
+  UserModel.create(user)
     .then(() => {
-      res.redirect('/home');
+      req.session.userData = user
+      res.redirect('/');
     })
     .catch((err) => {
       console.log(err)
@@ -65,8 +68,7 @@ router.post('/login', (req, res, next) => {
           .then((isMatching) => {
             if (isMatching) {
               req.session.userData = result
-              req.session.work = false
-              res.redirect('/home')
+              res.redirect('/')
             } else {
               res.render('auth/login.hbs', {
                 msg: 'Password don\'t match'

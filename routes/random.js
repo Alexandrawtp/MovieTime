@@ -23,7 +23,7 @@ router.get('/random/:id', checkLoggedInUser, (req, res, next) => {
     axios.get(url)
         .then(result => {
             let movies = displayRandomFilms(result)
-            res.render('random.hbs', {
+            res.render('results.hbs', {
                 movies
             });
         })
