@@ -134,21 +134,11 @@ h2 {
 /* search page */
 
 .background2 {
-<<<<<<< HEAD
     background-image: url(../images/pellicule.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-=======
-  background-image: url(../images/pellicule.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100%;
-
->>>>>>> b881ac8b537220afaa709befbf83902fcc7592dd
 }
 
 .searchGroup {
