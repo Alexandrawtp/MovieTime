@@ -83,16 +83,16 @@ router.post('/groups/create', (req, res, next) => {
     description,
   } = req.body;
 
+  const username = req.session.userData.username;
+
   const group = {
     name: name,
     description: description,
     members: [{
-      username: req.session.userData.username,
+      username: username,
       status: 'admin'
     }]
   };
-
-  const username = req.session.userData.username;
 
   GroupModel.create(group)
       .then(() => {
@@ -102,6 +102,7 @@ router.post('/groups/create', (req, res, next) => {
             })
       })
       .catch((e) => {
+        console.log(e);
         GroupModel.find({"members.username": username})
             .then((groups) => {
               res.render('group/groups.hbs', {groups, err: "Error ..."})

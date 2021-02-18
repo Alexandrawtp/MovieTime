@@ -10,7 +10,7 @@ const userSchema = new Schema({
     unique: true,
     require: true
   },
-  mail: {
+  email: {
     type: String,
     require: true
   },
@@ -20,7 +20,10 @@ const userSchema = new Schema({
   },
   mylist: [String],
   groups: [String],
-  isAdmin: Boolean
+  isAdmin: Boolean,
+  profilePic: {
+    type: String,
+  },
 });
 
 const UserModel = model("users", userSchema);
