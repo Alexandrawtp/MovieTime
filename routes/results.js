@@ -1,7 +1,6 @@
 const checkLoggedInUser = require('./middlewares')
 const router = require("express").Router();
 const axios = require('axios');
-
 let api_key = process.env.API_KEY;
 
 router.post('/results', checkLoggedInUser, (req, res) => {
