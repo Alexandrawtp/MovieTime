@@ -2,13 +2,16 @@ const router = require("express").Router();
 
 /* Home page */
 router.get('/', (req, res) => {
-    if (req.session.userData) {
-        res.render('home.hbs', {
-            username: req.session.userData.username
-        })
-    } else {
-        res.render('index');
-    }
+  if (req.session.userData) {
+    res.render('home.hbs', {
+      userLoggedIn: true
+    });
+  } else {
+    res.render('home.hbs', {
+      userLoggedIn: false
+    });
+  }
+  // res.render('index');
 });
 
 module.exports = router;

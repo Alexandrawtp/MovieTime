@@ -2,7 +2,6 @@ const router = require("express").Router();
 const bcrypt = require('bcryptjs');
 const UserModel = require('../models/User.model.js');
 
-
 /* Sign Up page */
 router.get('/sign-up', (req, res) => {
     res.render('auth/sign-up.hbs')
@@ -45,53 +44,45 @@ router.post('/sign-up', (req, res, next) => {
             next(err);
         })
 });
-
 /* Login page */
 router.get('/login', (req, res) => {
     res.render('auth/login.hbs')
 });
-
 router.post('/login', (req, res, next) => {
-    const {
-        username,
-        password
-    } = req.body;
-
-    UserModel.findOne({
-            username: username
-        })
-        .then(function (result) {
-            if (result) {
-                bcrypt.compare(password, result.password)
-                    .then((isMatching) => {
-                        if (isMatching) {
-                            req.session.userData = result
-                            res.redirect('/')
-                        } else {
-                            res.render('auth/login.hbs', {
-                                msg: 'Password don\'t match'
-                            })
-                        }
-                    })
-                    .catch((err) => {
-                        next(err)
-                    })
-            } else {
-                res.render('auth/login.hbs', {
-                    msg: 'Username does not exist'
-                })
-            }
-        })
-        .catch((err) => {
-            next(err)
-        })
+  const {
+      username,
+      password
+  } = req.body;
+  UserModel.findOne({username: username})
+      .then((result) => {
+          if (result) {
+              bcrypt.compare(password, result.password)
+                  .then((isMatching) => {
+                      if (isMatching) {
+                          req.session.userData = result
+                          res.redirect('/')
+                      } else {
+                          res.render('auth/login.hbs', {
+                              msg: 'Password don\'t match'
+                          })
+                      }
+                  })
+                  .catch((err) => {
+                      next(err)
+                  })
+          } else {
+              res.render('auth/login.hbs', {
+                  msg: 'Username does not exist'
+              })
+          }
+      })
+      .catch((err) => {
+          next(err)
+      })
 });
-
 /* Log out */
-
 router.get('/logout', (req, res) => {
     req.session.destroy();
     res.redirect('/');
 })
-
 module.exports = router;
