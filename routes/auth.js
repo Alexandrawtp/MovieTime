@@ -50,10 +50,8 @@ router.post('/login', (req, res, next) => {
       username,
       password
   } = req.body;
-  UserModel.findOne({
-          username: username
-      })
-      .then(function (result) {
+  UserModel.findOne({username: username})
+      .then((result) => {
           if (result) {
               bcrypt.compare(password, result.password)
                   .then((isMatching) => {

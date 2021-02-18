@@ -1,5 +1,9 @@
 <div class="background">
+  {{#if userLoggedIn}}
   {{> navbar }}
+  {{else}}
+  {{> navbar_logout}}
+  {{/if}}
 
   <section class="section-1">
     <h1>Give me a movie !</h1>

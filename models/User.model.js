@@ -24,6 +24,7 @@ const userSchema = new Schema({
   profilePic: {
     type: String,
   },
+  bio: String,
 });
 
 const UserModel = model("users", userSchema);

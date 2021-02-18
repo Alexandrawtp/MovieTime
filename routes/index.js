@@ -6,12 +6,14 @@ const router = require("express").Router();
 router.get('/', (req, res) => {
   if (req.session.userData) {
     res.render('home.hbs', {
-      username: req.session.userData.username
-    })
+      userLoggedIn: true
+    });
   } else {
-    res.render('index');
+    res.render('home.hbs', {
+      userLoggedIn: false
+    });
   }
-  res.render('index');
+  // res.render('index');
 });
 
 module.exports = router;
