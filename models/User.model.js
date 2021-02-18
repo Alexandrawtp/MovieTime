@@ -10,13 +10,17 @@ const userSchema = new Schema({
     unique: true,
     require: true
   },
-  mail: {
+  email: {
     type: String,
     require: true
   },
   password: {
     type: String,
     require: true
+  },
+  myList: [String],
+  profilePic: {
+    type: String,
   },
 
   members: [{

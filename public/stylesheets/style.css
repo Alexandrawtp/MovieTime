@@ -200,6 +200,12 @@ h2 {
   margin-right: 10px;
 }
 
+/* profile page */
+
+#profile {
+  height: 700px;
+}
+
 /* search page */
 
 .background2 {
