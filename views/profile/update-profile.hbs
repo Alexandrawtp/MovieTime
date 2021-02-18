@@ -1,27 +1,29 @@
-{{> navbar }}
+<div class="background-ticket">
+    <div>
+        {{> navbar}}
+    </div>
+    <div class="updateContain">
+            <div class="sideU">
+                <form method='POST' action='/profile/{{user._id}}/edit'>
+                    <div>
+                        <label>Mail: </label>
+                        <input name='mail' type='text' value='{{user.email}}'>
+                    </div>
+                    <div>
+                        <label>Bio: </label>
+                        <input name='bio' type='text' value='{{user.bio}}'>
+                    </div>
+                    <button type='submit'>Submit</button>
+                </form>
+            </div>
+            <div>
+                <div class="sideU">
+                    <form method="POST" action="/upload" enctype="multipart/form-data">
+                        <input type="file" name="imageUrl" accept="image/png, image/jpg">
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+    </div>
 
-<h2>Update the Profile</h2>
-<hr>
-<div>
-    <form method='POST' action='/profile/{{user._id}}/edit'>
-        <div>
-            <label>Username: </label>
-            <input name='username' type='text' value='{{user.username}}'>
-        </div>
-        <div>
-            <label>Mail: </label>
-            <input name='mail' type='text' value='{{user.email}}'>
-        </div>
-        <button type='submit'>Submit</button>
-        <label>Bio: </label>
-            <input name='bio' type='text' value='{{user.bio}}'>
-        </div>
-        <button type='submit'>Submit</button>
-    </form>
-</div>
-<div>
-    <form method="POST" action="/upload" enctype="multipart/form-data">
-        <input type="file" name="imageUrl" accept="image/png, image/jpg">
-        <button type="submit">Submit</button>
-    </form>
 </div>
