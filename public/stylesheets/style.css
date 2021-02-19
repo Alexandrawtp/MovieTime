@@ -501,4 +501,7 @@ cursor: pointer;
       border-radius: 0px;
   }
 }
-  
+
+.editLink {
+  text-decoration: none;
+}
