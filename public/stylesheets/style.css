@@ -6,6 +6,7 @@ body {
 
 a {
     color: #ffffff;
+    text-decoration: none;
 }
 
 ul {
@@ -115,8 +116,9 @@ h3 {
 /* login */
 
 .form-control {
-    margin-top: 10px;
+    width: 80%;
     background: transparent;
+    margin: auto;
 }
 
 .btn-primary {
@@ -136,7 +138,7 @@ h3 {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height: 2000px;
+    height: 2500px;
 }
 
 /* search page */
@@ -316,10 +318,11 @@ h3 {
 #profile {
   margin-top: 4rem;
   justify-content: space-around;
-  height: 400px;
+  height: 800px;
   display: flex;
   flex-direction: row;
   color: black;
+  flex-wrap: wrap;
 }
 
 .pictureProfile {
@@ -328,13 +331,14 @@ h3 {
     width: 13rem;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .buttonEdit {
     display: flex;
     justify-content: center;
     position: relative;
-    margin-bottom: 200px;
+    margin-top: 20px;
 }
 
 .profileTitle {
@@ -354,6 +358,7 @@ h3 {
   background-color: white;
   width: 20rem;
   border-radius: 20px;
+  margin-top: 10px;
 }
 
 .subTitle {
@@ -391,13 +396,18 @@ h3 {
 .content-box {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: flex-start;
+    margin: 10px;
 }
 
 .member {
     margin: 10px;
     font-size: 10px;
+}
+
+.dash-btn {
+    background-color: transparent;
+    border: none;
 }
 
 
@@ -504,4 +514,8 @@ cursor: pointer;
 
 .editLink {
   text-decoration: none;
+}
+
+.link-fix {
+    text-decoration: none;
 }
