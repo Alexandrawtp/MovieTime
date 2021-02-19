@@ -10,8 +10,8 @@ router.get('/profile', checkLoggedInUser, (req, res, next) => {
     .then((user) => {
       res.render('profile/profile.hbs', {user});
     })
-    .catch(() => {
-      console.log('cannot show the user')
+    .catch((err) => {
+      next(err)
     })
 })
 

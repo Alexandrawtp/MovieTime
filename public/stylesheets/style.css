@@ -1,6 +1,6 @@
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(0, 0, 0);
     color: white;
 }
 
@@ -13,7 +13,7 @@ ul {
 }
 
 a:hover {
-    color: rgb(216, 174, 178);
+    color: rgb(145, 60, 49);
 }
 
 nav {
@@ -68,6 +68,11 @@ h1 {
 h2 {
     color: white;
     text-align: center;
+    padding: 30px;
+}
+
+h3 {
+    margin: 20px 0;
 }
 
 /* Section 2 */
@@ -95,9 +100,9 @@ h2 {
     display: flex;
     background-color: transparent;
     flex-direction: column;
-    width: 400px;
+    width: 600px;
     padding: 30px;
-    margin-top: 70px;
+    margin-top: 30px;
     border: none;
 }
 
@@ -115,20 +120,23 @@ h2 {
 }
 
 .btn-primary {
-    margin: 10px;
+    margin: 10px 0;
     color: white;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(170, 170, 170);
     border: none;
-    border-radius: 40%;
 }
 
 .btn-primary:hover {
-    background-color: rgb(97, 0, 0);
+    background-color: rgb(212, 212, 212);
 }
 
 .background-ticket {
     background-image: url('../images/admission.jpg');
-    height: 1500px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 2000px;
 }
 
 /* search page */
@@ -154,7 +162,7 @@ h2 {
 .smiley {
     width: 50px;
     margin: 10px;
-    box-shadow: 2px 2px 30px rgb(247, 183, 240);
+    box-shadow: 2px 2px 30px rgb(255, 255, 255);
     border-radius: 50px;
     border: solid 2px;
 }
@@ -177,7 +185,7 @@ h2 {
 .smiley-draw {
     display: flex;
     margin: 10px;
-    box-shadow: 2px 2px 30px rgb(247, 183, 240);
+    box-shadow: 2px 2px 30px rgb(255, 255, 255);
     border: solid 4px;
     border-radius: 200px;
 }
@@ -272,6 +280,7 @@ h2 {
 
 .col-lg-3 {
     margin: 20px;
+    width: 30%;
 }
 
 .details {
@@ -288,18 +297,18 @@ h2 {
 /* Groups */
 
 .section-groups {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.middle-section{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 400px;
-  margin: 50px;
+.middle-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 400px;
+    margin: 30px;
 }
 
 /* profile page */
@@ -307,32 +316,192 @@ h2 {
 #profile {
   margin-top: 4rem;
   justify-content: space-around;
-  height: 550px;
+  height: 400px;
   display: flex;
   flex-direction: row;
+  color: black;
 }
 
-.image-container {
-  clip-path: circle(50%);
-  height: 13rem;
-  width: 13rem;
-  display: flex;
-  justify-content: center;
+.pictureProfile {
+    clip-path: circle(50%);
+    height: 13rem;
+    width: 13rem;
+    display: flex;
+    justify-content: center;
 }
 
-.button-edit {
-padding-bottom: 100px;
+.buttonEdit {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 200px;
 }
 
 .profileTitle {
-  padding-top: 7rem;
+    margin-top: 3rem;
+    height: 6rem;
 }
 
 .presentation, .bio {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   font-size: 20px;
   font-style: bold;
-  align-items: center;
   height: 200px;
+  align-items: center;
+  border: 3px solid white;
+  background-color: white;
+  width: 20rem;
+  border-radius: 20px;
+}
+
+.subTitle {
+  color: #9c1006;
+}
+
+.updateContain {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.sideU {
+    margin: 10rem 5rem;
+}
+
+/* Profil-pic */
+
+.group-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    padding: 30px;
+}
+
+.profile-pic {
+    width: 70px;
+    border-radius: 100%;
+}
+
+.content-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.member {
+    margin: 10px;
+    font-size: 10px;
+}
+
+
+.main {
+  background-color: #FFFFFF;
+  width: 400px;
+  height: 400px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+  padding-top: 40px;
+  color: #9c1006;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.un {
+width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+form.form1 {
+  padding-top: 40px;
+}
+
+.pass {
+      width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+
+.un:focus, .pass:focus {
+  border: 2px solid rgba(0, 0, 0, 0.18) !important;
+  
+}
+
+.submit {
+cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #9c1006, #f21707);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left: 35%;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.forgot {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #E1BEE7;
+  padding-top: 15px;
+}
+
+.error {
+  color: black;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .main {
+      border-radius: 0px;
+  }
+}
+
+.editLink {
+  text-decoration: none;
 }

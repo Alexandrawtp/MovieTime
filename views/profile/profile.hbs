@@ -1,19 +1,25 @@
-<div class="background2">
-  {{> navbar }}
-
-  <h1 class="profileTitle">Profile informations</h1>
-  <div id="profile">
-    <div class="image-container">
-      <img class="images" src="{{user.profilePic}}" alt="">
+<div class="background-ticket">
+    <div>
+        {{> navbar }}
     </div>
-    <div class="presentation">
-      <p>{{user.username}} <br> {{user.email}}</p>
+    <div class="profileTitle">
+        <h1>Profile informations</h1>
     </div>
-    <div class="bio">
-      <p>{{user.bio}}</p>
+    <div id="profile">
+        <div class="pictureProfile">
+            <img class="images" src="{{user.profilePic}}" alt="">
+        </div>
+        <div class="presentation">
+            <h3 class="subTitle">My information</h3>
+            <p>{{user.username}} <br> {{user.email}}</p>
+        </div>
+        <div class="bio">
+            <h3 class="subTitle">Bio</h3>
+            <p>{{user.bio}}</p>
+        </div>
     </div>
-      <div class="buttonEdit">
-    <a href="/profile/{{user._id}}/edit">EDIT</a>
-  </div>
-  </div>
+    <div class="buttonEdit">
+        <a href="/profile/{{user._id}}/edit">EDIT</a>
+        <a class="nav-link" href="/logout">Log out</a>
+    </div>
 </div>
