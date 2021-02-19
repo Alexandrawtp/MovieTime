@@ -8,13 +8,15 @@
                 <img class="img-responsive card-img-top" src="https://image.tmdb.org/t/p/w500{{poster_path}}"
                     alt="poster">
                 <div class="overlay">
-                    <h2>{{title}}</h2>
+                    <h2>{{title}} <form action="/my-list/{{id}}/delete" method="POST">
+                            <button type="submit" class="dash-btn"><img src="/images/dash-circle.svg"
+                                    alt="dash-circle"></button>
+                        </form>
+                    </h2>
+                    <p>{{overview}}</p>
                 </div>
             </div>
         </div>
-        <form action="/my-list/{{id}}/delete" method="POST">
-            <button type="submit" class="btn btn-primary">Delete this film</button>
-        </form>
         {{/each}}
     </div>
 </div>

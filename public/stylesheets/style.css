@@ -1,6 +1,6 @@
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(0, 0, 0);
     color: white;
 }
 
@@ -13,7 +13,7 @@ ul {
 }
 
 a:hover {
-    color: rgb(216, 174, 178);
+    color: rgb(145, 60, 49);
 }
 
 nav {
@@ -68,6 +68,7 @@ h1 {
 h2 {
     color: white;
     text-align: center;
+    padding: 30px;
 }
 
 h3 {
@@ -119,35 +120,34 @@ h3 {
 }
 
 .btn-primary {
-    margin: 10px;
+    margin: 10px 0;
     color: white;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(170, 170, 170);
     border: none;
 }
 
 .btn-primary:hover {
-    background-color: rgb(97, 0, 0);
+    background-color: rgb(212, 212, 212);
 }
 
 .background-ticket {
-  background-image: url('../images/admission.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 1500px;
+    background-image: url('../images/admission.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 2000px;
 }
 
 /* search page */
 
 .background2 {
-  background-image: url(../images/pellicule.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 1000px;
-
+    background-image: url(../images/pellicule.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 1000px;
 }
 
 .searchGroup {
@@ -163,7 +163,7 @@ h3 {
 .smiley {
     width: 50px;
     margin: 10px;
-    box-shadow: 2px 2px 30px rgb(247, 183, 240);
+    box-shadow: 2px 2px 30px rgb(255, 255, 255);
     border-radius: 50px;
     border: solid 2px;
 }
@@ -186,7 +186,7 @@ h3 {
 .smiley-draw {
     display: flex;
     margin: 10px;
-    box-shadow: 2px 2px 30px rgb(247, 183, 240);
+    box-shadow: 2px 2px 30px rgb(255, 255, 255);
     border: solid 4px;
     border-radius: 200px;
 }
@@ -281,7 +281,7 @@ h3 {
 
 .col-lg-3 {
     margin: 20px;
-    width: 18%;
+    width: 30%;
 }
 
 .details {
@@ -324,23 +324,23 @@ h3 {
 }
 
 .pictureProfile {
-  clip-path: circle(50%);
-  height: 13rem;
-  width: 13rem;
-  display: flex;
-  justify-content: center;
+    clip-path: circle(50%);
+    height: 13rem;
+    width: 13rem;
+    display: flex;
+    justify-content: center;
 }
 
 .buttonEdit {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 200px;
 }
 
 .profileTitle {
-  margin-top: 3rem;
-  height: 6rem;
+    margin-top: 3rem;
+    height: 6rem;
 }
 
 .presentation, .bio {
@@ -362,14 +362,14 @@ h3 {
 }
 
 .updateContain {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .sideU {
-  margin: 10rem 5rem;
+    margin: 10rem 5rem;
 }
 
 /* Profil-pic */
@@ -380,6 +380,8 @@ h3 {
     justify-content: center;
     text-align: center;
     margin-top: 50px;
+    font-size: 20px;
+    padding: 30px;
 }
 
 .profile-pic {
@@ -398,7 +400,6 @@ h3 {
     margin: 10px;
     font-size: 10px;
 }
-
 
 
 .main {
