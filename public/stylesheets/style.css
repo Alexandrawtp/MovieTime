@@ -319,10 +319,11 @@ h3 {
 #profile {
   margin-top: 4rem;
   justify-content: space-around;
-  height: 400px;
+  height: 800px;
   display: flex;
   flex-direction: row;
   color: black;
+  flex-wrap: wrap;
 }
 
 .pictureProfile {
@@ -331,13 +332,14 @@ h3 {
     width: 13rem;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .buttonEdit {
     display: flex;
     justify-content: center;
     position: relative;
-    margin-bottom: 200px;
+    margin-top: 20px;
 }
 
 .profileTitle {
@@ -357,6 +359,7 @@ h3 {
   background-color: white;
   width: 20rem;
   border-radius: 20px;
+  margin-top: 10px;
 }
 
 .subTitle {
