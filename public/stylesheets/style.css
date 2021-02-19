@@ -1,6 +1,6 @@
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(0, 0, 0);
     color: white;
 }
 
@@ -13,7 +13,7 @@ ul {
 }
 
 a:hover {
-    color: rgb(216, 174, 178);
+    color: rgb(145, 60, 49);
 }
 
 nav {
@@ -68,6 +68,7 @@ h1 {
 h2 {
     color: white;
     text-align: center;
+    padding: 30px;
 }
 
 h3 {
@@ -119,35 +120,34 @@ h3 {
 }
 
 .btn-primary {
-    margin: 10px;
+    margin: 10px 0;
     color: white;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(170, 170, 170);
     border: none;
 }
 
 .btn-primary:hover {
-    background-color: rgb(97, 0, 0);
+    background-color: rgb(212, 212, 212);
 }
 
 .background-ticket {
-  background-image: url('../images/admission.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 1500px;
+    background-image: url('../images/admission.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 2000px;
 }
 
 /* search page */
 
 .background2 {
-  background-image: url(../images/pellicule.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 1000px;
-
+    background-image: url(../images/pellicule.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 1000px;
 }
 
 .searchGroup {
@@ -163,7 +163,7 @@ h3 {
 .smiley {
     width: 50px;
     margin: 10px;
-    box-shadow: 2px 2px 30px rgb(247, 183, 240);
+    box-shadow: 2px 2px 30px rgb(255, 255, 255);
     border-radius: 50px;
     border: solid 2px;
 }
@@ -186,7 +186,7 @@ h3 {
 .smiley-draw {
     display: flex;
     margin: 10px;
-    box-shadow: 2px 2px 30px rgb(247, 183, 240);
+    box-shadow: 2px 2px 30px rgb(255, 255, 255);
     border: solid 4px;
     border-radius: 200px;
 }
@@ -281,7 +281,7 @@ h3 {
 
 .col-lg-3 {
     margin: 20px;
-    width: 18%;
+    width: 30%;
 }
 
 .details {
@@ -315,60 +315,60 @@ h3 {
 /* profile page */
 
 #profile {
-  margin-top: 4rem;
-  justify-content: space-around;
-  height: 400px;
-  display: flex;
-  flex-direction: row;
+    margin-top: 4rem;
+    justify-content: space-around;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
 }
 
 .pictureProfile {
-  clip-path: circle(50%);
-  height: 13rem;
-  width: 13rem;
-  display: flex;
-  justify-content: center;
+    clip-path: circle(50%);
+    height: 13rem;
+    width: 13rem;
+    display: flex;
+    justify-content: center;
 }
 
 .buttonEdit {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 200px;
 }
 
 .profileTitle {
-  margin-top: 3rem;
-  height: 6rem;
+    margin-top: 3rem;
+    height: 6rem;
 }
 
 .presentation, .bio {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 20px;
-  font-style: bold;
-  height: 200px;
-  align-items: center;
-  border: 3px solid black;
-  background-color: rgb(212, 217, 214, 0.5);
-  width: 20rem;
-  border-radius: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    font-style: bold;
+    height: 200px;
+    align-items: center;
+    border: 3px solid black;
+    background-color: rgb(212, 217, 214, 0.5);
+    width: 20rem;
+    border-radius: 25%;
 }
 
 .subTitle {
-  color: black;
+    color: black;
 }
 
 .updateContain {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .sideU {
-  margin: 10rem 5rem;
+    margin: 10rem 5rem;
 }
 
 /* Profil-pic */
@@ -379,6 +379,8 @@ h3 {
     justify-content: center;
     text-align: center;
     margin-top: 50px;
+    font-size: 20px;
+    padding: 30px;
 }
 
 .profile-pic {
@@ -396,4 +398,106 @@ h3 {
 .member {
     margin: 10px;
     font-size: 10px;
+}
+
+/* Groups */
+
+.square-box {
+    background-color: rgb(255, 255, 255);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+
+}
+
+.text-group {
+    margin: auto 0;
+    text-decoration: none;
+}
+
+.news {
+    font-size: 14px;
+    padding: 4px;
+    border: solid 1px rgb(119, 119, 119);
+    width: 300px;
+}
+
+.small-card {
+    background-color: black;
+    height: 300px;
+    padding: 20px;
+}
+
+.dash-btn {
+    background-color: transparent;
+    border: solid 1px white;
+    border-radius: 100%;
+    margin: 20px;
+    width: 30px;
+}
+
+.dash-btn:hover {
+    border: none;
+    box-shadow: 2px 2px 30px white;
+}
+
+.un {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.sign {
+    /* titre */
+    padding-top: 40px;
+    color: #9C1006;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.main {
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 400px;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #9C1006, #F21707);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.link-fix {
+    color: #9C1006;
+    text-decoration: none;
 }

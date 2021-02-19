@@ -5,7 +5,7 @@ require('dotenv').config();
 // ℹ️ Connects to the database
 require("./db");
 
-
+var sass = require('node-sass');
 
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
@@ -32,14 +32,14 @@ const mongoose = require('mongoose');
 
 app.use(session({
     secret: 'workplease',
-    saveUninitialized: false, 
-    resave: false, 
+    saveUninitialized: false,
+    resave: false,
     cookie: {
-      maxAge: 1000*60*60*24
+        maxAge: 1000 * 60 * 60 * 24
     },
     store: new MongoStore({
-      mongooseConnection: mongoose.connection,
-      ttl: 60*60*24,
+        mongooseConnection: mongoose.connection,
+        ttl: 60 * 60 * 24,
     })
 }));
 

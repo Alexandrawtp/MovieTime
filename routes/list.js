@@ -44,7 +44,7 @@ const addNews = (username, movie_id) => {
             if (!isPending(username, group)) {
                 group.news.push({
                     username,
-                    message: `added ${movie.data.title} to its list`
+                    message: `added '${movie.data.title}' to his list`
                 });
             }
             group.save();

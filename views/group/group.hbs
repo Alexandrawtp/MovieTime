@@ -1,85 +1,91 @@
-{{> navbar }}
+<div class="background-ticket">
+    {{> navbar }}
 
-{{#if msg}}
-<div class="message success">
-    {{msg}}
-</div>
-{{/if}}
+    {{#if msg}}
+    <div class="message success">
+        {{msg}}
+    </div>
+    {{/if}}
 
-{{#if err}}
-<div class="message error">
-    {{err}}
-</div>
-{{/if}}
+    {{#if err}}
+    <div class="message error">
+        {{err}}
+    </div>
+    {{/if}}
 
-<div class="group-header">
-    <h1>{{group.name}}</h1>
-    <p>{{group.description}}</p>
-    <section class="section-groups">
-        <div>
-            <div class="middle-section">
-                <h3>Members</h3>
-                <ul class="content-box">
-                    {{#each group.members}}
-                    <li class="member"><img src="/images/vc.jpg" alt="profile-pic" class="profile-pic"><br>{{username}}
-                        <br>
-                        ({{status}})
-                    </li>
-                    {{/each}}
-                </ul>
-                {{#if isAdmin}}
-                <div class="admin-panel">
-                    {{#if pendingUsers}}
-                    <div class="content-box">
-                        <h4>Pending Users</h4>
-                        <ul>
-                            {{#each pendingUsers}}
-                            <li>
-                                {{username}}
-                                <div class="double-btn">
-                                    <form action="/group/{{../group.name}}/accept/{{username}}" method="POST">
-                                        <button type="submit" class="btn btn-primary">Accept</button>
-                                    </form>
-                                    <form action="/group/{{../group.name}}/reject/{{username}}" method="POST">
-                                        <button type="submit" class="btn btn-primary">Reject</button>
-                                    </form>
-                                </div>
+    <div class="group-header">
+        <h1>{{group.name}}</h1>
+        <p>{{group.description}}</p>
+        <section class="section-groups">
+            <div>
+                <div class="middle-section">
+                    <div class="small-card">
+                        <h3>Members</h3>
+                        <ul class="content-box">
+                            {{#each group.members}}
+                            <li class="member"><img src="/images/vc.jpg" alt="profile-pic"
+                                    class="profile-pic"><br>{{username}}
+                                <br>
+                                ({{status}})
                             </li>
                             {{/each}}
                         </ul>
+                        {{#if isAdmin}}
+                        <div class="admin-panel">
+                            {{#if pendingUsers}}
+                            <div class="content-box">
+                                <h4>Pending Users</h4>
+                                <ul>
+                                    {{#each pendingUsers}}
+                                    <li>
+                                        {{username}}
+                                        <div class="double-btn">
+                                            <form action="/group/{{../group.name}}/accept/{{username}}" method="POST">
+                                                <button type="submit" class="btn btn-primary">Accept</button>
+                                            </form>
+                                            <form action="/group/{{../group.name}}/reject/{{username}}" method="POST">
+                                                <button type="submit" class="btn btn-primary">Reject</button>
+                                            </form>
+                                        </div>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                                {{/if}}
+                            </div>
+                            <form action="/group/{{group.name}}/delete" method="POST">
+                                <button type="submit" class="btn btn-primary">Delete group</button>
+                            </form>
+                        </div>
                         {{/if}}
                     </div>
-                    <form action="/group/{{group.name}}/delete" method="POST">
-                        <button type="submit" class="btn btn-primary">Delete group</button>
-                    </form>
                 </div>
-                {{/if}}
-            </div>
-            <div class="middle-section">
-                <h3>News</h3>
-                <ul class="content-box">
-                    {{#each group.news}}
-                    <li>{{username}} - {{message}}</li>
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
-    </section>
-
-
-    <h2>Movies liked by members</h2>
-    <div class="randomMovies">
-        {{#each topMovies}}
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="hovereffect">
-                <img class="img-responsive card-img-top" src="https://image.tmdb.org/t/p/w500{{poster_path}}"
-                    alt="poster">
-                <div class="overlay">
-                    <h2>{{title}}</h2>
-                    <button type="button" id="btnAdd" onclick="addToList({{id}})"><img src="/images/plus.svg"
-                            alt="plus"></button>
+                <div class="middle-section">
+                    <div class="small-card">
+                        <h3>News</h3>
+                        <ul class="content-box">
+                            {{#each group.news}}
+                            <li class="news">{{username}} {{message}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </section>
+        <h2>Movies liked by members</h2>
+        <div class="randomMovies">
+            {{#each topMovies}}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="hovereffect">
+                    <img class="img-responsive card-img-top" src="https://image.tmdb.org/t/p/w500{{poster_path}}"
+                        alt="poster">
+                    <div class="overlay">
+                        <h2>{{title}}</h2>
+                        <button type="button" id="btnAdd" onclick="addToList({{id}})"><img src="/images/plus.svg"
+                                alt="plus"></button>
+                        <p>{{overview}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
         </div>
-        {{/each}}
     </div>
