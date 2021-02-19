@@ -1,6 +1,5 @@
 <div class="background-ticket">
-    {{> navbar }}
-
+    {{> navbar}}
     {{#if msg}}
     <div class="message success">
         {{msg}}
@@ -15,18 +14,19 @@
 
     {{> group_search }}
 
-    <section class="section-groups">
-        <div class="middle-section">
-            <h3>My Groups</h3>
-            <div class="square-box">
+    <div class="content">
+        <div class="card">
+            <div class="main">
+                <div class="square-box">
                 {{#each groups}}
                 <h2 class = "sign"><a class="link-fix" href="/group/{{name}}">{{name}}</a></h2><br>
                 {{/each}}
             </div>
+            </div>
         </div>
-        <div class="middle-section">
+        <div class="card">
             <div class="main">
-                <h2 class="sign">Create a group</h3>
+                <p class="sign" align="center">Create a group</p>
                 <form action="/groups/create" method="POST">
                     <div class="form-group">
                         <input class="un" name="name" type="text" class="form-control" id="exampleInputEmail1"
@@ -40,5 +40,5 @@
                 </form>
             </div>
         </div>
-    </section>
+    </div>
 </div>
