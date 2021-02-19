@@ -3,21 +3,16 @@
 
     <div class="content">
         <div class="card">
-            <h2>Log in</h2>
-            <form action="/login" method="POST">
-                <div class="form-group">
-                    <input name="username" type="name" class="form-control" placeholder="Username">
-                </div>
-                <div class="form-group">
-                    <input name="password" type="password" class="form-control" id="exampleInputPassword1"
-                        placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-primary">Log in</button>
-            </form>
-
-            {{#if msg}}
-            <div class="error">{{msg}}</div>
-            {{/if}}
+            <div class="main">
+                <p class="sign" align="center">Ready to watch ?</p>
+                <form action="/login" method="POST" class="form1">
+                    <input class="un " name="username" type="name" align="center" placeholder="Username">
+                    <input class="pass" name="password" type="password" align="center" placeholder="Password">
+                    <button type="submit" class="submit" align="center">Login</button>
+                    {{#if msg}}
+                    <div class="error">{{msg}}</div>
+                    {{/if}}
+            </div>
 
         </div>
     </div>

@@ -1,29 +1,24 @@
 <div class="background-ticket">
-    <div>
-        {{> navbar}}
-    </div>
-    <div class="updateContain">
-            <div class="sideU">
-                <form method='POST' action='/profile/{{user._id}}/edit'>
-                    <div>
-                        <label>Mail: </label>
-                        <input name='mail' type='text' value='{{user.email}}'>
-                    </div>
-                    <div>
-                        <label>Bio: </label>
-                        <input name='bio' type='text' value='{{user.bio}}'>
-                    </div>
-                    <button type='submit'>Submit</button>
+    {{> navbar}}
+
+    <div class="content">
+        <div class="card">
+            <div class="main">
+                <p class="sign" align="center">Update</p>
+                <form method='POST' action='/profile/{{user._id}}/edit' class="form1">
+                    <input name="email" type="name" class="un " align="center" value='{{user.email}}'>
+                    <input name='bio' type='text' class="un " align="center" value='{{user.bio}}'>
+                    <button type="submit" class="submit" align="center">Update</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="main">
+                <p class="sign" align="center">Upload your Picture</p>
+                <form method="POST" action="/upload" enctype="multipart/form-data" class="form1">
+                    <input type="file" name="imageUrl" accept="image/png, image/jpg" class="un " align="center">
+                    <button class="submit" type="submit">Submit</button>
                 </form>
             </div>
-            <div>
-                <div class="sideU">
-                    <form method="POST" action="/upload" enctype="multipart/form-data">
-                        <input type="file" name="imageUrl" accept="image/png, image/jpg">
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
+        </div>
     </div>
-
 </div>
