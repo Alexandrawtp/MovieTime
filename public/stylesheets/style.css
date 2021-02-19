@@ -6,6 +6,7 @@ body {
 
 a {
     color: #ffffff;
+    text-decoration: none;
 }
 
 ul {
@@ -115,8 +116,9 @@ h3 {
 /* login */
 
 .form-control {
-    margin-top: 10px;
+    width: 80%;
     background: transparent;
+    margin: auto;
 }
 
 .btn-primary {
@@ -136,7 +138,7 @@ h3 {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height: 2000px;
+    height: 2500px;
 }
 
 /* search page */
@@ -392,13 +394,18 @@ h3 {
 .content-box {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: flex-start;
+    margin: 10px;
 }
 
 .member {
     margin: 10px;
     font-size: 10px;
+}
+
+.dash-btn {
+    background-color: transparent;
+    border: none;
 }
 
 
@@ -505,4 +512,8 @@ cursor: pointer;
 
 .editLink {
   text-decoration: none;
+}
+
+.link-fix {
+    text-decoration: none;
 }
