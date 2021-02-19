@@ -100,9 +100,9 @@ h3 {
     display: flex;
     background-color: transparent;
     flex-direction: column;
-    width: 400px;
+    width: 600px;
     padding: 30px;
-    margin-top: 70px;
+    margin-top: 30px;
     border: none;
 }
 
@@ -315,11 +315,12 @@ h3 {
 /* profile page */
 
 #profile {
-    margin-top: 4rem;
-    justify-content: space-around;
-    height: 400px;
-    display: flex;
-    flex-direction: row;
+  margin-top: 4rem;
+  justify-content: space-around;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  color: black;
 }
 
 .pictureProfile {
@@ -343,21 +344,21 @@ h3 {
 }
 
 .presentation, .bio {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 20px;
-    font-style: bold;
-    height: 200px;
-    align-items: center;
-    border: 3px solid black;
-    background-color: rgb(212, 217, 214, 0.5);
-    width: 20rem;
-    border-radius: 25%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 20px;
+  font-style: bold;
+  height: 200px;
+  align-items: center;
+  border: 3px solid white;
+  background-color: white;
+  width: 20rem;
+  border-radius: 20px;
 }
 
 .subTitle {
-    color: black;
+  color: #9c1006;
 }
 
 .updateContain {
@@ -400,104 +401,108 @@ h3 {
     font-size: 10px;
 }
 
-/* Groups */
 
-.square-box {
-    background-color: rgb(255, 255, 255);
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    border-radius: 20px;
-
-}
-
-.text-group {
-    margin: auto 0;
-    text-decoration: none;
-}
-
-.news {
-    font-size: 14px;
-    padding: 4px;
-    border: solid 1px rgb(119, 119, 119);
-    width: 300px;
-}
-
-.small-card {
-    background-color: black;
-    height: 300px;
-    padding: 20px;
-}
-
-.dash-btn {
-    background-color: transparent;
-    border: solid 1px white;
-    border-radius: 100%;
-    margin: 20px;
-    width: 30px;
-}
-
-.dash-btn:hover {
-    border: none;
-    box-shadow: 2px 2px 30px white;
-}
-
-.un {
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: center;
-    margin-bottom: 27px;
-    font-family: 'Ubuntu', sans-serif;
+.main {
+  background-color: #FFFFFF;
+  width: 400px;
+  height: 400px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
 .sign {
-    /* titre */
-    padding-top: 40px;
-    color: #9C1006;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
-    font-size: 23px;
+  padding-top: 40px;
+  color: #9c1006;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
 }
 
-.main {
-    background-color: #FFFFFF;
-    width: 400px;
-    height: 400px;
-    margin: 7em auto;
-    border-radius: 1.5em;
-    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+.un {
+width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+form.form1 {
+  padding-top: 40px;
+}
+
+.pass {
+      width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+
+.un:focus, .pass:focus {
+  border: 2px solid rgba(0, 0, 0, 0.18) !important;
+  
 }
 
 .submit {
-    cursor: pointer;
-    border-radius: 5em;
-    color: #fff;
-    background: linear-gradient(to right, #9C1006, #F21707);
-    border: 0;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    font-family: 'Ubuntu', sans-serif;
-    margin-left: 35%;
-    font-size: 13px;
-    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #9c1006, #f21707);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left: 35%;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
 
-.link-fix {
-    color: #9C1006;
-    text-decoration: none;
+.forgot {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #E1BEE7;
+  padding-top: 15px;
+}
+
+.error {
+  color: black;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .main {
+      border-radius: 0px;
+  }
+}
+
+.editLink {
+  text-decoration: none;
 }
