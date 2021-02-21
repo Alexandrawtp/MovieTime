@@ -35,7 +35,9 @@ const getMoviesFromId = (movieIds) => {
         .then(results => {
             return results.map((result) => result.data);
         })
-        .catch(err => console.log(err))
+        .catch((err) => {
+            next(err);
+        })
 }
 
 const getMembersLists = (members) => {
@@ -52,6 +54,9 @@ const getMembersLists = (members) => {
                 moviesIds = [...moviesIds, ...user.mylist];
             }
             return getMoviesFromId(moviesIds);
+        })
+        .catch((err) => {
+            next(err);
         })
 }
 
@@ -101,10 +106,14 @@ router.get('/group/:name', checkLoggedInUser, (req, res) => {
                             pendingUsers: group.members.filter((member) => member.status === 'pending'),
                             topMovies: movies,
                         })
-        
-                })
 
-            
+                })
+                .catch((err) => {
+                    next(err);
+                })
+        })
+        .catch((err) => {
+            next(err);
         })
 })
 

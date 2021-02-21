@@ -17,14 +17,14 @@ a:hover {
     color: rgb(145, 60, 49);
 }
 
-nav {
-    padding: 30px 20px 0 20px;
+.justify-content-between {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
 }
 
-#logo {
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
+.logo {
+    width: 100px;
 }
 
 #icons {
@@ -59,6 +59,7 @@ nav {
 h1 {
     text-align: center;
     font-size: 50px;
+    margin-bottom: 30px;
 }
 
 .question {
@@ -99,12 +100,15 @@ h3 {
 
 .card {
     display: flex;
-    background-color: transparent;
+    justify-content: center;
+    background-color: white;
     flex-direction: column;
     width: 600px;
     padding: 30px;
     margin-top: 30px;
     border: none;
+    border-radius: 20px;
+    text-align: center;
 }
 
 .content {
@@ -116,9 +120,14 @@ h3 {
 /* login */
 
 .form-control {
-    width: 80%;
+    width: 100%;
     background: transparent;
-    margin: auto;
+    border-radius: 5em;
+}
+
+.form-control:focus {
+    border: none;
+    box-shadow: 2px 2px 10px rgb(104, 16, 31);
 }
 
 .btn-primary {
@@ -299,6 +308,10 @@ h3 {
 
 /* Groups */
 
+.center-block {
+    text-align: center;
+}
+
 .section-groups {
     display: flex;
     flex-direction: row;
@@ -310,17 +323,16 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 400px;
+    width: 350px;
     margin: 30px;
 }
 
 /* profile page */
 
-#profile {
+.profile {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 800px;
     color: black;
 }
 
@@ -333,29 +345,40 @@ h3 {
     margin: 20px;
 }
 
-.buttonEdit {
-    display: flex;
-    justify-content: center;
-}
-
-.profileTitle {
-    margin-top: 3rem;
-    height: 6rem;
-}
-
 .presentation, .bio {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    font-size: 20px;
-    font-style: bold;
-    height: 200px;
-    align-items: center;
-    border: 3px solid white;
+    font-size: 18px;
     background-color: white;
     width: 20rem;
     border-radius: 20px;
     margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.presentation-myGroups {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-size: 18px;
+    background-color: white;
+    width: 25rem;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+#search-group {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.my-groups {
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .subTitle {
@@ -375,7 +398,7 @@ h3 {
 
 /* Profil-pic */
 
-.group-header {
+.responsive-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -387,14 +410,18 @@ h3 {
 
 .profile-pic {
     width: 70px;
+    height: 70px;
     border-radius: 100%;
 }
 
 .content-box {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     margin: 10px;
+    padding: 0;
+    text-align: center;
+    font-size: 14px;
 }
 
 .member {
@@ -427,9 +454,8 @@ h3 {
 .un {
     width: 76%;
     color: rgb(38, 50, 56);
-    font-weight: 700;
+    margin: 10px 0;
     font-size: 14px;
-    letter-spacing: 1px;
     background: rgba(136, 126, 126, 0.04);
     padding: 10px 20px;
     border: none;
@@ -437,39 +463,12 @@ h3 {
     outline: none;
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
     text-align: center;
-    margin-bottom: 27px;
     font-family: 'Ubuntu', sans-serif;
 }
 
-form.form1 {
-    padding-top: 40px;
-}
-
-.pass {
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    box-sizing: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: center;
-    margin-bottom: 27px;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-.un:focus, .pass:focus {
-    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+.un:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18);
 }
 
 .submit {
@@ -483,7 +482,7 @@ form.form1 {
     padding-bottom: 10px;
     padding-top: 10px;
     font-family: 'Ubuntu', sans-serif;
-    margin-left: 35%;
+    margin: 10px;
     font-size: 13px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
@@ -512,4 +511,27 @@ form.form1 {
 
 .link-fix {
     text-decoration: none;
+}
+
+.news {
+    margin: 5px 0;
+}
+
+.search-container {
+    width: 200px;
+    padding-bottom: 10px;
+}
+
+.btn-group {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.small-card {
+    text-align: center;
+}
+
+.group-header {
+    margin-top: 30px;
 }
