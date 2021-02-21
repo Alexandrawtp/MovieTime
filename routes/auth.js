@@ -38,7 +38,7 @@ router.post('/sign-up', (req, res, next) => {
     UserModel.create(user)
         .then(() => {
             req.session.userData = user
-            res.redirect('/profile');
+            res.redirect('/login');
         })
         .catch((err) => {
             next(err);

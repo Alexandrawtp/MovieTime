@@ -1,11 +1,12 @@
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(0, 0, 0);
     color: white;
 }
 
 a {
     color: #ffffff;
+    text-decoration: none;
 }
 
 ul {
@@ -13,17 +14,17 @@ ul {
 }
 
 a:hover {
-    color: rgb(216, 174, 178);
+    color: rgb(145, 60, 49);
 }
 
-nav {
-    padding: 30px 20px 0 20px;
+.justify-content-between {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
 }
 
-#logo {
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
+.logo {
+    width: 100px;
 }
 
 #icons {
@@ -58,6 +59,7 @@ nav {
 h1 {
     text-align: center;
     font-size: 50px;
+    margin-bottom: 30px;
 }
 
 .question {
@@ -68,6 +70,11 @@ h1 {
 h2 {
     color: white;
     text-align: center;
+    padding: 30px;
+}
+
+h3 {
+    margin: 20px 0;
 }
 
 /* Section 2 */
@@ -93,12 +100,15 @@ h2 {
 
 .card {
     display: flex;
-    background-color: transparent;
+    justify-content: center;
+    background-color: white;
     flex-direction: column;
-    width: 400px;
+    width: 600px;
     padding: 30px;
-    margin-top: 70px;
+    margin-top: 30px;
     border: none;
+    border-radius: 20px;
+    text-align: center;
 }
 
 .content {
@@ -110,45 +120,45 @@ h2 {
 /* login */
 
 .form-control {
-    margin-top: 10px;
+    width: 100%;
     background: transparent;
+    border-radius: 5em;
+}
+
+.form-control:focus {
+    border: none;
+    box-shadow: 2px 2px 10px rgb(104, 16, 31);
 }
 
 .btn-primary {
-    margin: 10px;
+    margin: 10px 0;
     color: white;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(170, 170, 170);
     border: none;
-    border-radius: 40%;
 }
 
 .btn-primary:hover {
-    background-color: rgb(97, 0, 0);
+    background-color: rgb(212, 212, 212);
 }
 
 .background-ticket {
     background-image: url('../images/admission.jpg');
-    height: 1500px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 2500px;
 }
 
 /* search page */
 
 .background2 {
-<<<<<<< HEAD
     background-image: url(../images/pellicule.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-=======
-  background-image: url(../images/pellicule.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100%;
-
->>>>>>> b881ac8b537220afaa709befbf83902fcc7592dd
+    height: 1000px;
 }
 
 .searchGroup {
@@ -164,7 +174,7 @@ h2 {
 .smiley {
     width: 50px;
     margin: 10px;
-    box-shadow: 2px 2px 30px rgb(247, 183, 240);
+    box-shadow: 2px 2px 30px rgb(255, 255, 255);
     border-radius: 50px;
     border: solid 2px;
 }
@@ -187,7 +197,7 @@ h2 {
 .smiley-draw {
     display: flex;
     margin: 10px;
-    box-shadow: 2px 2px 30px rgb(247, 183, 240);
+    box-shadow: 2px 2px 30px rgb(255, 255, 255);
     border: solid 4px;
     border-radius: 200px;
 }
@@ -282,6 +292,7 @@ h2 {
 
 .col-lg-3 {
     margin: 20px;
+    width: 30%;
 }
 
 .details {
@@ -297,52 +308,230 @@ h2 {
 
 /* Groups */
 
-.section-groups {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+.center-block {
+    text-align: center;
 }
 
-.middle-section{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 400px;
-  margin: 50px;
+.section-groups {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.middle-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 350px;
+    margin: 30px;
 }
 
 /* profile page */
 
-#profile {
-  margin-top: 4rem;
-  justify-content: space-around;
-  height: 550px;
-  display: flex;
-  flex-direction: row;
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: black;
 }
 
-.image-container {
-  clip-path: circle(50%);
-  height: 13rem;
-  width: 13rem;
-  display: flex;
-  justify-content: center;
-}
-
-.button-edit {
-padding-bottom: 100px;
-}
-
-.profileTitle {
-  padding-top: 7rem;
+.pictureProfile {
+    clip-path: circle(50%);
+    height: 13rem;
+    width: 13rem;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
 }
 
 .presentation, .bio {
-  display: flex;
-  justify-content: center;
-  font-size: 20px;
-  font-style: bold;
-  align-items: center;
-  height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-size: 18px;
+    background-color: white;
+    width: 20rem;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.presentation-myGroups {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-size: 18px;
+    background-color: white;
+    width: 25rem;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+#search-group {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.my-groups {
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.subTitle {
+    color: #9c1006;
+}
+
+.updateContain {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.sideU {
+    margin: 10rem 5rem;
+}
+
+/* Profil-pic */
+
+.responsive-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    padding: 30px;
+}
+
+.profile-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+}
+
+.content-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+    padding: 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.member {
+    margin: 10px;
+    font-size: 10px;
+}
+
+.dash-btn {
+    background-color: transparent;
+    border: none;
+}
+
+.main {
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 400px;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+    padding-top: 40px;
+    color: #9c1006;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.un {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    margin: 10px 0;
+    font-size: 14px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.un:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18);
+}
+
+.submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #9c1006, #f21707);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 10px;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.forgot {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #E1BEE7;
+    padding-top: 15px;
+}
+
+.error {
+    color: black;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .main {
+        border-radius: 0px;
+    }
+}
+
+.editLink {
+    text-decoration: none;
+}
+
+.link-fix {
+    text-decoration: none;
+}
+
+.news {
+    margin: 5px 0;
+}
+
+.search-container {
+    width: 200px;
+    padding-bottom: 10px;
+}
+
+.btn-group {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.small-card {
+    text-align: center;
+}
+
+.group-header {
+    margin-top: 30px;
 }

@@ -1,13 +1,12 @@
 <nav>
     <ul class="nav justify-content-between">
-        <div id="logo">MovieTime</div>
-        <form action="/results" method="POST">
-            <div class="mb-3">
+        <img src="/images/logo.png" alt="logo" class="logo">
+        <form action="/results" method="POST" class="form-container">
+            <div class="search-container">
                 <input name="movieName" type="text" class="form-control" id="exampleInputEmail1"
                     placeholder="Search for a Movie" aria-describedby="emailHelp">
             </div>
         </form>
-        </section>
         <div id="icons">
             <li class="nav-item">
                 <img src="/images/house.svg" alt="home" class="icon">
@@ -24,10 +23,6 @@
             <li class="nav-item">
                 <img src="/images/person.svg" alt="profile" class="icon">
                 <a class="nav-link" href="/profile">Profile</a>
-            </li>
-            <li class="nav-item">
-                <img src="/images/logout.svg" alt="home" class="icon">
-                <a class="nav-link" href="/logout">Log out</a>
             </li>
         </div>
     </ul>

@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
       userLoggedIn: true
     });
   } else {
-    res.render('home.hbs', {
+    res.render('index.hbs', {
       userLoggedIn: false
     });
   }

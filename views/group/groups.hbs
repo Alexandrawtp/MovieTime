@@ -1,39 +1,41 @@
-{{> navbar }}
+<div class="background-ticket">
+    {{> navbar }}
 
-{{#if msg}}
+    {{#if msg}}
     <div class="message success">
         {{msg}}
     </div>
-{{/if}}
+    {{/if}}
 
-{{#if err}}
+    {{#if err}}
     <div class="message error">
         {{err}}
     </div>
-{{/if}}
+    {{/if}}
+    <h2>Search for a group :</h2>
+    {{> group_search }}
 
-{{> group_search }}
-
-<section class="section-groups">
-    <div class="middle-section">
-        <h3>My Groups</h3>
-        {{#each groups}}
-            <a href="/group/{{name}}">{{name}}</a> <br>
-        {{/each}}
-
-    </div>
-    <div class="middle-section">
-        <h3>Create a group</h3>
-        <form action="/groups/create" method="POST">
-            <div class="form-group">
-                <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                       placeholder="Your group name">
+    <section class="section-groups">
+        <div class="presentation">
+            <h3 class="subTitle">My Groups</h3>
+            <div class="my-groups">
+                {{#each groups}}
+                <button type="submit" class="submit"><a href="/group/{{name}}">{{name}}</a></button>
+                {{/each}}
             </div>
-            <div class="form-group">
-                <textarea name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                          placeholder="Description"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Create group</button>
-        </form>
-    </div>
-</section>
+        </div>
+        <div class="presentation">
+            <h3 class="subTitle">Create a group</h3>
+            <form action="/groups/create" method="POST">
+                <div class="form-group">
+                    <input class="un" name="name" type="text" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Your group name" />
+                </div>
+                <div class="form-group">
+                    <textarea class="un" name="description" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Description"></textarea>
+                </div>
+                <button type="submit" class="submit">Create</button>
+            </form>
+    </section>
+</div>

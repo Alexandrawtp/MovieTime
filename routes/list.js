@@ -2,6 +2,7 @@ const axios = require('axios');
 const checkLoggedInUser = require('./middlewares')
 const router = require("express").Router();
 const UserModel = require('../models/User.model.js');
+const GroupModel = require('../models/Group.model.js');
 
 let api_key = process.env.API_KEY;
 
@@ -44,7 +45,7 @@ const addNews = (username, movie_id) => {
             if (!isPending(username, group)) {
                 group.news.push({
                     username,
-                    message: `added ${movie.data.title} to its list`
+                    message: `added '${movie.data.title}' to his list`
                 });
             }
             group.save();

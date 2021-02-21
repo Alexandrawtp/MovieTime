@@ -12,7 +12,7 @@ const groupSchema = new Schema({
     description: String,
     members: [{
         username: String,
-        status: String
+        status: String,
     }],
     news: [{
         username: String,
