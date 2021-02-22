@@ -15,15 +15,15 @@
 
     <div class="group-header">
         <h1>{{group.name}}</h1>
-        <p>{{group.description}}</p>
+        <p class="center-block">{{group.description}}</p>
         <section class="section-groups">
             <div>
                 <div class="middle-section">
                     <div class="small-card">
-                        <h3>Members</h3>
+                        <h3 class="center-block">Members</h3>
                         <ul class="content-box">
-                            {{#each group.members}}
-                            <li class="member"><img src="/images/vc.jpg" alt="profile-pic"
+                            {{#each members}}
+                            <li class="member"><img src="{{profilePic}}" alt="profile-pic"
                                     class="profile-pic"><br>{{username}}
                                 <br>
                                 ({{status}})
@@ -34,7 +34,7 @@
                         <div class="admin-panel">
                             {{#if pendingUsers}}
                             <div class="content-box">
-                                <h4>Pending Users</h4>
+                                <h4 class="center-block">Pending Users</h4>
                                 <ul>
                                     {{#each pendingUsers}}
                                     <li>
@@ -53,7 +53,7 @@
                                 {{/if}}
                             </div>
                             <form action="/group/{{group.name}}/delete" method="POST">
-                                <button type="submit" class="btn btn-primary">Delete group</button>
+                                <button type="submit" class="submit" id="btn-delete-group">Delete group</button>
                             </form>
                         </div>
                         {{/if}}
@@ -61,7 +61,7 @@
                 </div>
                 <div class="middle-section">
                     <div class="small-card">
-                        <h3>News</h3>
+                        <h3 class="center-block">News</h3>
                         <ul class="content-box">
                             {{#each group.news}}
                             <li class="news">{{username}} {{message}}</li>

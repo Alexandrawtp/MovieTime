@@ -2,24 +2,24 @@
     <div>
         {{> navbar }}
     </div>
-    <div class="profileTitle">
+    <div class="responsive-content">
         <h1>Profile informations</h1>
-    </div>
-    <div id="profile">
-        <div class="pictureProfile">
-            <img class="images" src="{{user.profilePic}}" alt="">
+        <div class="profile">
+            <div class="pictureProfile">
+                <img class="images" src="{{user.profilePic}}" alt="">
+            </div>
+            <div class="presentation">
+                <h3 class="subTitle">My information</h3>
+                <p class="content-box" {{user.username}} <br> {{user.email}}</p>
+            </div>
+            <div class="bio">
+                <h3 class="subTitle">Bio</h3>
+                <p class="content-box">{{user.bio}}</p>
+            </div>
         </div>
-        <div class="presentation">
-            <h3 class="subTitle">My information</h3>
-            <p class="content-box"{{user.username}} <br> {{user.email}}</p>
+        <div class="btn-group">
+            <a class="nav-link" href="/profile/{{user._id}}/edit">EDIT</a>
+            <a class="nav-link" href="/logout">LOG OUT</a>
         </div>
-        <div class="bio">
-            <h3 class="subTitle">Bio</h3>
-            <p class="content-box">{{user.bio}}</p>
-        </div>
-    </div>
-    <div class="buttonEdit">
-        <a class="nav-link" href="/profile/{{user._id}}/edit">EDIT</a>
-        <a class="nav-link" href="/logout">LOG OUT</a>
     </div>
 </div>

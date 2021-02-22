@@ -1,20 +1,20 @@
 <div class="background-ticket">
-    {{> navbar}}
-
-    <div class="content">
-        <div class="card">
-            <div class="main">
-                <p class="sign" align="center">Update</p>
+    <div>
+        {{> navbar }}
+    </div>
+    <div class="responsive-content">
+        <h1>Update Profile</h1>
+        <div class="profile">
+            <div class="presentation">
+                <h3 class="subTitle">Update</h3>
                 <form method='POST' action='/profile/{{user._id}}/edit' class="form1">
                     <input name="email" type="name" class="un " align="center" value='{{user.email}}'>
-                    <textarea name='bio' type='text' class="un " align="center" >{{user.bio}}</textarea>
+                    <textarea name='bio' type='text' class="un " align="center">{{user.bio}}</textarea>
                     <button type="submit" class="submit" align="center">Update</button>
                 </form>
             </div>
-        </div>
-        <div class="card">
-            <div class="main">
-                <p class="sign" align="center">Upload your Picture</p>
+            <div class="bio">
+                <h3 class="subTitle">Upload your Picture</h3>
                 <form method="POST" action="/upload" enctype="multipart/form-data" class="form1">
                     <input type="file" name="imageUrl" accept="image/png, image/jpg" class="un " align="center">
                     <button class="submit" type="submit">Submit</button>

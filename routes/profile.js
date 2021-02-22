@@ -50,9 +50,9 @@ router.post('/profile/:id/edit', checkLoggedInUser, (req, res, next) => {
       console.log(id)
       res.redirect('/profile');
     })
-    .catch(() => {
-      console.log('error updating')
-    });
+    .catch((err) => {
+        next(err);
+    })
 });
 
 module.exports = router;

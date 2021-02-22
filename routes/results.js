@@ -15,7 +15,9 @@ router.post('/results', checkLoggedInUser, (req, res) => {
             let movies = result.data.results;
             res.render('results.hbs', {movies});
         })
-        .catch(err => console.log(err))
+        .catch((err) => {
+            next(err);
+        })
 });
 
 module.exports = router;

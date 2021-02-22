@@ -27,7 +27,9 @@ router.get('/random/:id', checkLoggedInUser, (req, res, next) => {
                 movies
             });
         })
-        .catch(err => console.log(err))
+        .catch((err) => {
+            next(err);
+        })
 });
 
 function displayRandomFilms(result) {
