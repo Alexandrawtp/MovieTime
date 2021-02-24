@@ -17,6 +17,7 @@ Create a group with your friends and share with them your favorite movies.
 # Data Structure
 
 MongoDB Atlas
+TMDB API
 
 Models
 - Group
@@ -40,5 +41,3 @@ Routes
 Views
 - auth/ -> login and signup
 - group/ -> group-results, group, groups
-
-TMDB API
