@@ -41,3 +41,7 @@ Routes
 Views
 - auth/ -> login and signup
 - group/ -> group-results, group, groups
+
+# Ressources
+
+https://givemeafilm.herokuapp.com/sign-up
