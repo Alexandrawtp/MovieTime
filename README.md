@@ -1,3 +1,5 @@
+![alt Logo](https://github.com/Alexandrawtp/movies/blob/main/public/images/logo.png)
+
 # MovieTime!
 
 # Description
