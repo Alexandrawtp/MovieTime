@@ -3,7 +3,7 @@
 # MovieTime!
 
 # Description
-Tired of not having a good movie to watch tonight? Let our website give you a random movie based on your current mood!
+Tired of not having a good movie to watch tonight? MovieTime will give you a random movie based on your current mood!
 Create a group with your friends and share with them your favorite movies.
 
 # MVP
